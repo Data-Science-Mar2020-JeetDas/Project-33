@@ -1,0 +1,1005 @@
+# -*- coding: utf-8 -*-
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import random
+import pandas
+
+
+df = pd.read_csv("C:/Users/Jeet Das/Desktop/Project-33.csv",encoding="utf-8")
+
+print("\n----------------------- output data :---------------------\n")
+print("Project-33 : Number of deaths attributed to non-communicable diseases, by type of disease and sex [By WHO] using Python")
+print("\n------------------------------------------------------------\n")
+
+
+# Question – A : get row and column numbers 
+
+print('---------------------------------------------')
+print("Dimension of the data frame = ",df.shape)
+print('---------------------------------------------')
+
+# Question – B : print column names :
+
+print('------------------------\n Column names as follows :')
+print('------------------------\n')
+count = 0
+for col in df.columns: 
+        print(count,"-->",col)
+        count = count+1
+print("\n-----------------------------\n")
+
+# Question - C : print available country
+
+country = df.groupby(['Location'])[['Period']].count()
+print("---------------------------------")
+print("\tAvailable country names : ")
+print("-------------------------------")
+print(country)
+print("-------------------------------")
+count = 0
+for row in range(len(country)): 
+        count = count+1
+print("total no. of country = ",count)        
+print("-----------------------------\n")
+
+
+# Question - D : Available years data for which data is available
+
+years = df.groupby(['Period'])[['Location']].count()
+print("---------------------------------")
+print("\tAvailable years data : ")
+print("-------------------------------")
+print(years)
+print("-------------------------------")
+count = 0
+for row in range(len(years)): 
+        count = count+1
+print("total no. of years = ",count)        
+print("-----------------------------\n")
+
+
+
+# Question - E :Types of available dieases
+
+dieases = df.groupby(['Dim2'])[['Period']].count()
+print("---------------------------------")
+print("\tAvailable types of dieases : ")
+print("-------------------------------")
+print(dieases)
+print("-------------------------------")
+count = 0
+for row in range(len(dieases)): 
+        count = count+1
+print("total no. of dieases = ",count)        
+print("-----------------------------\n")
+
+
+#******************* Processing all data 2000 to 2016 ********************
+
+
+df2000 = df[df.Period == 2000]
+print("\n\n--------------[ OUTPUT for 2000 ]----------------------\n\n")
+print(df2000[['Location','Period','Dim1','First Tooltip']])
+
+df2005 = df[df.Period == 2005]
+print("\n\n--------------[ OUTPUT for 2005 ]----------------------\n\n")
+print(df2005[['Location','Period','Dim1','First Tooltip']])
+
+df2010 = df[df.Period == 2010]
+print("\n\n--------------[ OUTPUT for 2010 ]----------------------\n\n")
+print(df2010[['Location','Period','Dim1','First Tooltip']])
+
+df2015 = df[df.Period == 2015]
+print("\n\n--------------[ OUTPUT for 2015 ]----------------------\n\n")
+print(df2015[['Location','Period','Dim1','First Tooltip']])
+
+df2016 = df[df.Period == 2016]
+print("\n\n--------------[ OUTPUT for 2016 ]----------------------\n\n")
+print(df2016[['Location','Period','Dim1','First Tooltip']])
+
+#------------- Question-01 : 2000 : For Both Sexes---------------------
+
+df2000_both = df2000[df2000.Dim1 == 'Both sexes']
+print("\n\n--------------[ OUTPUT for 2000 Both sexes ]----------------------\n\n")
+print(df2000_both[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2000_both[df2000_both.Dim2 == 'Cardiovascular diseases']
+df2 = df2000_both[df2000_both.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2000_both[df2000_both.Dim2 == 'Diabetes mellitus']
+df4 = df2000_both[df2000_both.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 01 : 2000 : For Both Sexes')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Question-02 : 2005 : For Both Sexes---------------------
+
+df2005_both = df2005[df2005.Dim1 == 'Both sexes']
+print("\n\n--------------[ OUTPUT for 2005 Both sexes ]----------------------\n\n")
+print(df2005_both[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2005_both[df2005_both.Dim2 == 'Cardiovascular diseases']
+df2 = df2005_both[df2005_both.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2005_both[df2005_both.Dim2 == 'Diabetes mellitus']
+df4 = df2005_both[df2005_both.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 02 : 2005 : For Both Sexes')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Question-03 : 2010 : For Both Sexes---------------------
+
+df2010_both = df2010[df2010.Dim1 == 'Both sexes']
+print("\n\n--------------[ OUTPUT for 2010 Both sexes ]----------------------\n\n")
+print(df2010_both[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2010_both[df2010_both.Dim2 == 'Cardiovascular diseases']
+df2 = df2010_both[df2010_both.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2010_both[df2010_both.Dim2 == 'Diabetes mellitus']
+df4 = df2010_both[df2010_both.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 03 : 2010 : For Both Sexes')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Question-04 : 2015 : For Both Sexes---------------------
+
+df2015_both = df2015[df2015.Dim1 == 'Both sexes']
+print("\n\n--------------[ OUTPUT for 2015 Both sexes ]----------------------\n\n")
+print(df2015_both[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2015_both[df2015_both.Dim2 == 'Cardiovascular diseases']
+df2 = df2015_both[df2015_both.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2015_both[df2015_both.Dim2 == 'Diabetes mellitus']
+df4 = df2015_both[df2015_both.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 04 : 2015 : For Both Sexes')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Question-05 : 2016 : For Both Sexes---------------------
+
+df2016_both = df2016[df2016.Dim1 == 'Both sexes']
+print("\n\n--------------[ OUTPUT for 2016 Both sexes ]----------------------\n\n")
+print(df2016_both[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2016_both[df2016_both.Dim2 == 'Cardiovascular diseases']
+df2 = df2016_both[df2016_both.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2016_both[df2016_both.Dim2 == 'Diabetes mellitus']
+df4 = df2016_both[df2016_both.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 05 : 2016 : For Both Sexes')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Section-B : For male -------------------                                                         
+                                                                                                                                                                           
+#------------- Question-06 : 2000 : For Male ---------------------
+
+df2000_male = df2000[df2000.Dim1 == 'Male']
+print("\n\n--------------[ OUTPUT for 2000 Male ]----------------------\n\n")
+print(df2000_male[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2000_male[df2000_male.Dim2 == 'Cardiovascular diseases']
+df2 = df2000_male[df2000_male.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2000_male[df2000_male.Dim2 == 'Diabetes mellitus']
+df4 = df2000_male[df2000_male.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 06 : 2000 : For Male')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+
+#------------- Question-07 : 2005 : For Male ---------------------
+
+df2005_male = df2005[df2005.Dim1 == 'Male']
+print("\n\n--------------[ OUTPUT for 2005 Male ]----------------------\n\n")
+print(df2005_male[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2005_male[df2005_male.Dim2 == 'Cardiovascular diseases']
+df2 = df2005_male[df2005_male.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2005_male[df2005_male.Dim2 == 'Diabetes mellitus']
+df4 = df2005_male[df2005_male.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 07 : 2005 : For Male')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Question-08 : 2010 : For Male ---------------------
+
+df2010_male = df2010[df2010.Dim1 == 'Male']
+print("\n\n--------------[ OUTPUT for 2010 Male ]----------------------\n\n")
+print(df2010_male[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2010_male[df2010_male.Dim2 == 'Cardiovascular diseases']
+df2 = df2010_male[df2010_male.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2010_male[df2010_male.Dim2 == 'Diabetes mellitus']
+df4 = df2010_male[df2010_male.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 08 : 2010 : For Male')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Question-09 : 2015 : For Male ---------------------
+
+df2015_male = df2015[df2015.Dim1 == 'Male']
+print("\n\n--------------[ OUTPUT for 2015 Male ]----------------------\n\n")
+print(df2015_male[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2015_male[df2015_male.Dim2 == 'Cardiovascular diseases']
+df2 = df2015_male[df2015_male.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2015_male[df2015_male.Dim2 == 'Diabetes mellitus']
+df4 = df2015_male[df2015_male.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 09 : 2015 : For Male')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Question-10 : 2016 : For Male ---------------------
+
+df2016_male = df2016[df2016.Dim1 == 'Male']
+print("\n\n--------------[ OUTPUT for 2016 Male ]----------------------\n\n")
+print(df2016_male[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2016_male[df2016_male.Dim2 == 'Cardiovascular diseases']
+df2 = df2016_male[df2016_male.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2016_male[df2016_male.Dim2 == 'Diabetes mellitus']
+df4 = df2016_male[df2016_male.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 10 : 2016 : For Male')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Section-C : For Female -------------------
+
+#------------- Question-11 : 2000 : For Both Sexes---------------------
+
+df2000_female = df2000[df2000.Dim1 == 'Female']
+print("\n\n--------------[ OUTPUT for 2000 Female ]----------------------\n\n")
+print(df2000_female[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2000_female[df2000_female.Dim2 == 'Cardiovascular diseases']
+df2 = df2000_female[df2000_female.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2000_female[df2000_female.Dim2 == 'Diabetes mellitus']
+df4 = df2000_female[df2000_female.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 11 : 2000 : For Female')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Question-12 : 2005 : For Both Sexes---------------------
+
+df2005_female = df2005[df2005.Dim1 == 'Female']
+print("\n\n--------------[ OUTPUT for 2005 Female ]----------------------\n\n")
+print(df2005_female[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2005_female[df2005_female.Dim2 == 'Cardiovascular diseases']
+df2 = df2005_female[df2005_female.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2005_female[df2005_female.Dim2 == 'Diabetes mellitus']
+df4 = df2005_female[df2005_female.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 12 : 2005 : For Female')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Question-13 : 2010 : For Both Sexes---------------------
+
+df2010_female = df2010[df2010.Dim1 == 'Female']
+print("\n\n--------------[ OUTPUT for 2010 Female ]----------------------\n\n")
+print(df2010_female[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2010_female[df2010_female.Dim2 == 'Cardiovascular diseases']
+df2 = df2010_female[df2010_female.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2010_female[df2010_female.Dim2 == 'Diabetes mellitus']
+df4 = df2010_female[df2010_female.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 13 : 2010 : For Female')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Question-14 : 2015 : For Both Sexes---------------------
+
+df2015_female = df2015[df2015.Dim1 == 'Female']
+print("\n\n--------------[ OUTPUT for 2015 Female ]----------------------\n\n")
+print(df2015_female[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2015_female[df2015_female.Dim2 == 'Cardiovascular diseases']
+df2 = df2015_female[df2015_female.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2015_female[df2015_female.Dim2 == 'Diabetes mellitus']
+df4 = df2015_female[df2015_female.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 14 : 2015 : For Female')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+#------------- Question-15 : 2016 : For Both Sexes---------------------
+
+df2016_female = df2016[df2016.Dim1 == 'Female']
+print("\n\n--------------[ OUTPUT for 2016 Female ]----------------------\n\n")
+print(df2016_female[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2016_female[df2016_female.Dim2 == 'Cardiovascular diseases']
+df2 = df2016_female[df2016_female.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2016_female[df2016_female.Dim2 == 'Diabetes mellitus']
+df4 = df2016_female[df2016_female.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 15 : 2016 : For Female')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+    
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+            
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
