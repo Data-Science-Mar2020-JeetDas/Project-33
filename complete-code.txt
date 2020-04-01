@@ -704,7 +704,7 @@ plt.show()
 
 #------------- Section-C : For Female -------------------
 
-#------------- Question-11 : 2000 : For Both Sexes---------------------
+#------------- Question-11 : 2000 : For female---------------------
 
 df2000_female = df2000[df2000.Dim1 == 'Female']
 print("\n\n--------------[ OUTPUT for 2000 Female ]----------------------\n\n")
@@ -764,7 +764,7 @@ plt.plot(i3,df4['First Tooltip'],
 plt.legend()
 plt.show()
 
-#------------- Question-12 : 2005 : For Both Sexes---------------------
+#------------- Question-12 : 2005 : For female---------------------
 
 df2005_female = df2005[df2005.Dim1 == 'Female']
 print("\n\n--------------[ OUTPUT for 2005 Female ]----------------------\n\n")
@@ -824,7 +824,7 @@ plt.plot(i3,df4['First Tooltip'],
 plt.legend()
 plt.show()
 
-#------------- Question-13 : 2010 : For Both Sexes---------------------
+#------------- Question-13 : 2010 : For female ---------------------
 
 df2010_female = df2010[df2010.Dim1 == 'Female']
 print("\n\n--------------[ OUTPUT for 2010 Female ]----------------------\n\n")
@@ -884,7 +884,7 @@ plt.plot(i3,df4['First Tooltip'],
 plt.legend()
 plt.show()
 
-#------------- Question-14 : 2015 : For Both Sexes---------------------
+#------------- Question-14 : 2015 : For female---------------------
 
 df2015_female = df2015[df2015.Dim1 == 'Female']
 print("\n\n--------------[ OUTPUT for 2015 Female ]----------------------\n\n")
@@ -944,7 +944,7 @@ plt.plot(i3,df4['First Tooltip'],
 plt.legend()
 plt.show()
 
-#------------- Question-15 : 2016 : For Both Sexes---------------------
+#------------- Question-15 : 2016 : For female---------------------
 
 df2016_female = df2016[df2016.Dim1 == 'Female']
 print("\n\n--------------[ OUTPUT for 2016 Female ]----------------------\n\n")
