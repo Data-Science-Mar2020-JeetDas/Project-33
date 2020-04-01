@@ -1,0 +1,745 @@
+
+#------------- Question-09 : 2015 : For Male ---------------------
+
+df2015_male = df2015[df2015.Dim1 == 'Male']
+print("\n\n--------------[ OUTPUT for 2015 Male ]----------------------\n\n")
+print(df2015_male[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2015_male[df2015_male.Dim2 == 'Cardiovascular diseases']
+df2 = df2015_male[df2015_male.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2015_male[df2015_male.Dim2 == 'Diabetes mellitus']
+df4 = df2015_male[df2015_male.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 09 : 2015 : For Male')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2015 Male ]----------------------
+
+
+                                 Location  \
+13                            Afghanistan   
+16                            Afghanistan   
+19                            Afghanistan   
+22                            Afghanistan   
+73                                Albania   
+76                                Albania   
+79                                Albania   
+82                                Albania   
+133                               Algeria   
+136                               Algeria   
+139                               Algeria   
+142                               Algeria   
+193                                Angola   
+196                                Angola   
+199                                Angola   
+202                                Angola   
+253                   Antigua and Barbuda   
+256                   Antigua and Barbuda   
+259                   Antigua and Barbuda   
+262                   Antigua and Barbuda   
+313                             Argentina   
+316                             Argentina   
+319                             Argentina   
+322                             Argentina   
+373                               Armenia   
+376                               Armenia   
+379                               Armenia   
+382                               Armenia   
+433                             Australia   
+436                             Australia   
+                                  ...   
+10519                             Uruguay   
+10522                             Uruguay   
+10573                          Uzbekistan   
+10576                          Uzbekistan   
+10579                          Uzbekistan   
+10582                          Uzbekistan   
+10633                             Vanuatu   
+10636                             Vanuatu   
+10639                             Vanuatu   
+10642                             Vanuatu   
+10693  Venezuela (Bolivarian Republic of)   
+10696  Venezuela (Bolivarian Republic of)   
+10699  Venezuela (Bolivarian Republic of)   
+10702  Venezuela (Bolivarian Republic of)   
+10753                            Viet Nam   
+10756                            Viet Nam   
+10759                            Viet Nam   
+10762                            Viet Nam   
+10813                               Yemen   
+10816                               Yemen   
+10819                               Yemen   
+10822                               Yemen   
+10873                              Zambia   
+10876                              Zambia   
+10879                              Zambia   
+10882                              Zambia   
+10933                            Zimbabwe   
+10936                            Zimbabwe   
+10939                            Zimbabwe   
+10942                            Zimbabwe   
+
+                                        Dim2  Period  Dim1  First Tooltip  
+13                       Malignant neoplasms    2015  Male          10319  
+16                         Diabetes mellitus    2015  Male           2276  
+19                   Cardiovascular diseases    2015  Male          25728  
+22     Chronic obstructive pulmonary disease    2015  Male           3432  
+73                       Malignant neoplasms    2015  Male           2852  
+76                         Diabetes mellitus    2015  Male             88  
+79                   Cardiovascular diseases    2015  Male           7951  
+82     Chronic obstructive pulmonary disease    2015  Male            563  
+133                      Malignant neoplasms    2015  Male          12180  
+136                        Diabetes mellitus    2015  Male           3866  
+139                  Cardiovascular diseases    2015  Male          33686  
+142    Chronic obstructive pulmonary disease    2015  Male           3370  
+193                      Malignant neoplasms    2015  Male           3808  
+196                        Diabetes mellitus    2015  Male           1326  
+199                  Cardiovascular diseases    2015  Male           9843  
+202    Chronic obstructive pulmonary disease    2015  Male           1558  
+253                      Malignant neoplasms    2015  Male             65  
+256                        Diabetes mellitus    2015  Male             23  
+259                  Cardiovascular diseases    2015  Male            100  
+262    Chronic obstructive pulmonary disease    2015  Male             13  
+313                      Malignant neoplasms    2015  Male          33800  
+316                        Diabetes mellitus    2015  Male           4915  
+319                  Cardiovascular diseases    2015  Male          45687  
+322    Chronic obstructive pulmonary disease    2015  Male          16553  
+373                      Malignant neoplasms    2015  Male           4428  
+376                        Diabetes mellitus    2015  Male            432  
+379                  Cardiovascular diseases    2015  Male           5712  
+382    Chronic obstructive pulmonary disease    2015  Male            623  
+433                      Malignant neoplasms    2015  Male          25796  
+436                        Diabetes mellitus    2015  Male           2493  
+                                     ...     ...   ...            ...  
+10519                Cardiovascular diseases    2015  Male           4433  
+10522  Chronic obstructive pulmonary disease    2015  Male           1534  
+10573                    Malignant neoplasms    2015  Male           6543  
+10576                      Diabetes mellitus    2015  Male           2652  
+10579                Cardiovascular diseases    2015  Male          50640  
+10582  Chronic obstructive pulmonary disease    2015  Male           1978  
+10633                    Malignant neoplasms    2015  Male            106  
+10636                      Diabetes mellitus    2015  Male             37  
+10639                Cardiovascular diseases    2015  Male            241  
+10642  Chronic obstructive pulmonary disease    2015  Male             58  
+10693                    Malignant neoplasms    2015  Male          14166  
+10696                      Diabetes mellitus    2015  Male           7215  
+10699                Cardiovascular diseases    2015  Male          29649  
+10702  Chronic obstructive pulmonary disease    2015  Male           3597  
+10753                    Malignant neoplasms    2015  Male          55525  
+10756                      Diabetes mellitus    2015  Male           7026  
+10759                Cardiovascular diseases    2015  Male          92876  
+10762  Chronic obstructive pulmonary disease    2015  Male          17694  
+10813                    Malignant neoplasms    2015  Male           5029  
+10816                      Diabetes mellitus    2015  Male           1512  
+10819                Cardiovascular diseases    2015  Male          27614  
+10822  Chronic obstructive pulmonary disease    2015  Male           3343  
+10873                    Malignant neoplasms    2015  Male           3525  
+10876                      Diabetes mellitus    2015  Male            789  
+10879                Cardiovascular diseases    2015  Male           5357  
+10882  Chronic obstructive pulmonary disease    2015  Male            915  
+10933                    Malignant neoplasms    2015  Male           3990  
+10936                      Diabetes mellitus    2015  Male           1412  
+10939                Cardiovascular diseases    2015  Male           5331  
+10942  Chronic obstructive pulmonary disease    2015  Male           1326  
+
+[732 rows x 5 columns]
+                                                Location  \
+19                                           Afghanistan   
+79                                               Albania   
+139                                              Algeria   
+199                                               Angola   
+259                                  Antigua and Barbuda   
+319                                            Argentina   
+379                                              Armenia   
+439                                            Australia   
+499                                              Austria   
+559                                           Azerbaijan   
+619                                              Bahamas   
+679                                              Bahrain   
+739                                           Bangladesh   
+799                                             Barbados   
+859                                              Belarus   
+919                                              Belgium   
+979                                               Belize   
+1039                                               Benin   
+1099                                              Bhutan   
+1159                    Bolivia (Plurinational State of)   
+1219                              Bosnia and Herzegovina   
+1279                                            Botswana   
+1339                                              Brazil   
+1399                                   Brunei Darussalam   
+1459                                            Bulgaria   
+1519                                        Burkina Faso   
+1579                                             Burundi   
+1639                                          Cabo Verde   
+1699                                            Cambodia   
+1759                                            Cameroon   
+                                                 ...   
+9199                                           Sri Lanka   
+9259                                               Sudan   
+9319                                            Suriname   
+9379                                              Sweden   
+9439                                         Switzerland   
+9499                                Syrian Arab Republic   
+9559                                          Tajikistan   
+9619                                            Thailand   
+9679           The former Yugoslav Republic of Macedonia   
+9739                                         Timor-Leste   
+9799                                                Togo   
+9859                                               Tonga   
+9919                                 Trinidad and Tobago   
+9979                                             Tunisia   
+10039                                             Turkey   
+10099                                       Turkmenistan   
+10159                                             Uganda   
+10219                                            Ukraine   
+10279                               United Arab Emirates   
+10339  United Kingdom of Great Britain and Northern I...   
+10399                        United Republic of Tanzania   
+10459                           United States of America   
+10519                                            Uruguay   
+10579                                         Uzbekistan   
+10639                                            Vanuatu   
+10699                 Venezuela (Bolivarian Republic of)   
+10759                                           Viet Nam   
+10819                                              Yemen   
+10879                                             Zambia   
+10939                                           Zimbabwe   
+
+                          Dim2  Period  Dim1  First Tooltip  
+19     Cardiovascular diseases    2015  Male          25728  
+79     Cardiovascular diseases    2015  Male           7951  
+139    Cardiovascular diseases    2015  Male          33686  
+199    Cardiovascular diseases    2015  Male           9843  
+259    Cardiovascular diseases    2015  Male            100  
+319    Cardiovascular diseases    2015  Male          45687  
+379    Cardiovascular diseases    2015  Male           5712  
+439    Cardiovascular diseases    2015  Male          21753  
+499    Cardiovascular diseases    2015  Male          15006  
+559    Cardiovascular diseases    2015  Male          16208  
+619    Cardiovascular diseases    2015  Male            347  
+679    Cardiovascular diseases    2015  Male            454  
+739    Cardiovascular diseases    2015  Male         130680  
+799    Cardiovascular diseases    2015  Male            438  
+859    Cardiovascular diseases    2015  Male          33598  
+919    Cardiovascular diseases    2015  Male          14110  
+979    Cardiovascular diseases    2015  Male            283  
+1039   Cardiovascular diseases    2015  Male           5882  
+1099   Cardiovascular diseases    2015  Male            703  
+1159   Cardiovascular diseases    2015  Male           8583  
+1219   Cardiovascular diseases    2015  Male           9235  
+1279   Cardiovascular diseases    2015  Male           1205  
+1339   Cardiovascular diseases    2015  Male         194166  
+1399   Cardiovascular diseases    2015  Male            251  
+1459   Cardiovascular diseases    2015  Male          32224  
+1519   Cardiovascular diseases    2015  Male           8532  
+1579   Cardiovascular diseases    2015  Male           5185  
+1639   Cardiovascular diseases    2015  Male            468  
+1699   Cardiovascular diseases    2015  Male           9373  
+1759   Cardiovascular diseases    2015  Male          13762  
+                       ...     ...   ...            ...  
+9199   Cardiovascular diseases    2015  Male          25663  
+9259   Cardiovascular diseases    2015  Male          38466  
+9319   Cardiovascular diseases    2015  Male            712  
+9379   Cardiovascular diseases    2015  Male          15450  
+9439   Cardiovascular diseases    2015  Male           9697  
+9499   Cardiovascular diseases    2015  Male          19462  
+9559   Cardiovascular diseases    2015  Male           9702  
+9619   Cardiovascular diseases    2015  Male          65787  
+9679   Cardiovascular diseases    2015  Male           5850  
+9739   Cardiovascular diseases    2015  Male            631  
+9799   Cardiovascular diseases    2015  Male           4898  
+9859   Cardiovascular diseases    2015  Male             88  
+9919   Cardiovascular diseases    2015  Male           1947  
+9979   Cardiovascular diseases    2015  Male          16896  
+10039  Cardiovascular diseases    2015  Male          79042  
+10099  Cardiovascular diseases    2015  Male           9722  
+10159  Cardiovascular diseases    2015  Male          12783  
+10219  Cardiovascular diseases    2015  Male         173305  
+10279  Cardiovascular diseases    2015  Male           4532  
+10339  Cardiovascular diseases    2015  Male          80273  
+10399  Cardiovascular diseases    2015  Male          23630  
+10459  Cardiovascular diseases    2015  Male         416350  
+10519  Cardiovascular diseases    2015  Male           4433  
+10579  Cardiovascular diseases    2015  Male          50640  
+10639  Cardiovascular diseases    2015  Male            241  
+10699  Cardiovascular diseases    2015  Male          29649  
+10759  Cardiovascular diseases    2015  Male          92876  
+10819  Cardiovascular diseases    2015  Male          27614  
+10879  Cardiovascular diseases    2015  Male           5357  
+10939  Cardiovascular diseases    2015  Male           5331  
+
+[183 rows x 5 columns]
+                                                Location  \
+22                                           Afghanistan   
+82                                               Albania   
+142                                              Algeria   
+202                                               Angola   
+262                                  Antigua and Barbuda   
+322                                            Argentina   
+382                                              Armenia   
+442                                            Australia   
+502                                              Austria   
+562                                           Azerbaijan   
+622                                              Bahamas   
+682                                              Bahrain   
+742                                           Bangladesh   
+802                                             Barbados   
+862                                              Belarus   
+922                                              Belgium   
+982                                               Belize   
+1042                                               Benin   
+1102                                              Bhutan   
+1162                    Bolivia (Plurinational State of)   
+1222                              Bosnia and Herzegovina   
+1282                                            Botswana   
+1342                                              Brazil   
+1402                                   Brunei Darussalam   
+1462                                            Bulgaria   
+1522                                        Burkina Faso   
+1582                                             Burundi   
+1642                                          Cabo Verde   
+1702                                            Cambodia   
+1762                                            Cameroon   
+                                                 ...   
+9202                                           Sri Lanka   
+9262                                               Sudan   
+9322                                            Suriname   
+9382                                              Sweden   
+9442                                         Switzerland   
+9502                                Syrian Arab Republic   
+9562                                          Tajikistan   
+9622                                            Thailand   
+9682           The former Yugoslav Republic of Macedonia   
+9742                                         Timor-Leste   
+9802                                                Togo   
+9862                                               Tonga   
+9922                                 Trinidad and Tobago   
+9982                                             Tunisia   
+10042                                             Turkey   
+10102                                       Turkmenistan   
+10162                                             Uganda   
+10222                                            Ukraine   
+10282                               United Arab Emirates   
+10342  United Kingdom of Great Britain and Northern I...   
+10402                        United Republic of Tanzania   
+10462                           United States of America   
+10522                                            Uruguay   
+10582                                         Uzbekistan   
+10642                                            Vanuatu   
+10702                 Venezuela (Bolivarian Republic of)   
+10762                                           Viet Nam   
+10822                                              Yemen   
+10882                                             Zambia   
+10942                                           Zimbabwe   
+
+                                        Dim2  Period  Dim1  First Tooltip  
+22     Chronic obstructive pulmonary disease    2015  Male           3432  
+82     Chronic obstructive pulmonary disease    2015  Male            563  
+142    Chronic obstructive pulmonary disease    2015  Male           3370  
+202    Chronic obstructive pulmonary disease    2015  Male           1558  
+262    Chronic obstructive pulmonary disease    2015  Male             13  
+322    Chronic obstructive pulmonary disease    2015  Male          16553  
+382    Chronic obstructive pulmonary disease    2015  Male            623  
+442    Chronic obstructive pulmonary disease    2015  Male           6153  
+502    Chronic obstructive pulmonary disease    2015  Male           2322  
+562    Chronic obstructive pulmonary disease    2015  Male            982  
+622    Chronic obstructive pulmonary disease    2015  Male             25  
+682    Chronic obstructive pulmonary disease    2015  Male             54  
+742    Chronic obstructive pulmonary disease    2015  Male          46233  
+802    Chronic obstructive pulmonary disease    2015  Male             63  
+862    Chronic obstructive pulmonary disease    2015  Male           1585  
+922    Chronic obstructive pulmonary disease    2015  Male           4898  
+982    Chronic obstructive pulmonary disease    2015  Male             46  
+1042   Chronic obstructive pulmonary disease    2015  Male           1150  
+1102   Chronic obstructive pulmonary disease    2015  Male            218  
+1162   Chronic obstructive pulmonary disease    2015  Male           1743  
+1222   Chronic obstructive pulmonary disease    2015  Male            872  
+1282   Chronic obstructive pulmonary disease    2015  Male            363  
+1342   Chronic obstructive pulmonary disease    2015  Male          44976  
+1402   Chronic obstructive pulmonary disease    2015  Male             51  
+1462   Chronic obstructive pulmonary disease    2015  Male           2850  
+1522   Chronic obstructive pulmonary disease    2015  Male           1084  
+1582   Chronic obstructive pulmonary disease    2015  Male           1001  
+1642   Chronic obstructive pulmonary disease    2015  Male             53  
+1702   Chronic obstructive pulmonary disease    2015  Male           2040  
+1762   Chronic obstructive pulmonary disease    2015  Male           2832  
+                                     ...     ...   ...            ...  
+9202   Chronic obstructive pulmonary disease    2015  Male           6071  
+9262   Chronic obstructive pulmonary disease    2015  Male           4416  
+9322   Chronic obstructive pulmonary disease    2015  Male             59  
+9382   Chronic obstructive pulmonary disease    2015  Male           2425  
+9442   Chronic obstructive pulmonary disease    2015  Male           1955  
+9502   Chronic obstructive pulmonary disease    2015  Male           1491  
+9562   Chronic obstructive pulmonary disease    2015  Male            928  
+9622   Chronic obstructive pulmonary disease    2015  Male          19263  
+9682   Chronic obstructive pulmonary disease    2015  Male            529  
+9742   Chronic obstructive pulmonary disease    2015  Male            134  
+9802   Chronic obstructive pulmonary disease    2015  Male            801  
+9862   Chronic obstructive pulmonary disease    2015  Male             26  
+9922   Chronic obstructive pulmonary disease    2015  Male            234  
+9982   Chronic obstructive pulmonary disease    2015  Male           1684  
+10042  Chronic obstructive pulmonary disease    2015  Male          19356  
+10102  Chronic obstructive pulmonary disease    2015  Male            269  
+10162  Chronic obstructive pulmonary disease    2015  Male           2482  
+10222  Chronic obstructive pulmonary disease    2015  Male           8961  
+10282  Chronic obstructive pulmonary disease    2015  Male            689  
+10342  Chronic obstructive pulmonary disease    2015  Male          25440  
+10402  Chronic obstructive pulmonary disease    2015  Male           3298  
+10462  Chronic obstructive pulmonary disease    2015  Male         117633  
+10522  Chronic obstructive pulmonary disease    2015  Male           1534  
+10582  Chronic obstructive pulmonary disease    2015  Male           1978  
+10642  Chronic obstructive pulmonary disease    2015  Male             58  
+10702  Chronic obstructive pulmonary disease    2015  Male           3597  
+10762  Chronic obstructive pulmonary disease    2015  Male          17694  
+10822  Chronic obstructive pulmonary disease    2015  Male           3343  
+10882  Chronic obstructive pulmonary disease    2015  Male            915  
+10942  Chronic obstructive pulmonary disease    2015  Male           1326  
+
+[183 rows x 5 columns]
+                                                Location               Dim2  \
+16                                           Afghanistan  Diabetes mellitus   
+76                                               Albania  Diabetes mellitus   
+136                                              Algeria  Diabetes mellitus   
+196                                               Angola  Diabetes mellitus   
+256                                  Antigua and Barbuda  Diabetes mellitus   
+316                                            Argentina  Diabetes mellitus   
+376                                              Armenia  Diabetes mellitus   
+436                                            Australia  Diabetes mellitus   
+496                                              Austria  Diabetes mellitus   
+556                                           Azerbaijan  Diabetes mellitus   
+616                                              Bahamas  Diabetes mellitus   
+676                                              Bahrain  Diabetes mellitus   
+736                                           Bangladesh  Diabetes mellitus   
+796                                             Barbados  Diabetes mellitus   
+856                                              Belarus  Diabetes mellitus   
+916                                              Belgium  Diabetes mellitus   
+976                                               Belize  Diabetes mellitus   
+1036                                               Benin  Diabetes mellitus   
+1096                                              Bhutan  Diabetes mellitus   
+1156                    Bolivia (Plurinational State of)  Diabetes mellitus   
+1216                              Bosnia and Herzegovina  Diabetes mellitus   
+1276                                            Botswana  Diabetes mellitus   
+1336                                              Brazil  Diabetes mellitus   
+1396                                   Brunei Darussalam  Diabetes mellitus   
+1456                                            Bulgaria  Diabetes mellitus   
+1516                                        Burkina Faso  Diabetes mellitus   
+1576                                             Burundi  Diabetes mellitus   
+1636                                          Cabo Verde  Diabetes mellitus   
+1696                                            Cambodia  Diabetes mellitus   
+1756                                            Cameroon  Diabetes mellitus   
+                                                 ...                ...   
+9196                                           Sri Lanka  Diabetes mellitus   
+9256                                               Sudan  Diabetes mellitus   
+9316                                            Suriname  Diabetes mellitus   
+9376                                              Sweden  Diabetes mellitus   
+9436                                         Switzerland  Diabetes mellitus   
+9496                                Syrian Arab Republic  Diabetes mellitus   
+9556                                          Tajikistan  Diabetes mellitus   
+9616                                            Thailand  Diabetes mellitus   
+9676           The former Yugoslav Republic of Macedonia  Diabetes mellitus   
+9736                                         Timor-Leste  Diabetes mellitus   
+9796                                                Togo  Diabetes mellitus   
+9856                                               Tonga  Diabetes mellitus   
+9916                                 Trinidad and Tobago  Diabetes mellitus   
+9976                                             Tunisia  Diabetes mellitus   
+10036                                             Turkey  Diabetes mellitus   
+10096                                       Turkmenistan  Diabetes mellitus   
+10156                                             Uganda  Diabetes mellitus   
+10216                                            Ukraine  Diabetes mellitus   
+10276                               United Arab Emirates  Diabetes mellitus   
+10336  United Kingdom of Great Britain and Northern I...  Diabetes mellitus   
+10396                        United Republic of Tanzania  Diabetes mellitus   
+10456                           United States of America  Diabetes mellitus   
+10516                                            Uruguay  Diabetes mellitus   
+10576                                         Uzbekistan  Diabetes mellitus   
+10636                                            Vanuatu  Diabetes mellitus   
+10696                 Venezuela (Bolivarian Republic of)  Diabetes mellitus   
+10756                                           Viet Nam  Diabetes mellitus   
+10816                                              Yemen  Diabetes mellitus   
+10876                                             Zambia  Diabetes mellitus   
+10936                                           Zimbabwe  Diabetes mellitus   
+
+       Period  Dim1  First Tooltip  
+16       2015  Male           2276  
+76       2015  Male             88  
+136      2015  Male           3866  
+196      2015  Male           1326  
+256      2015  Male             23  
+316      2015  Male           4915  
+376      2015  Male            432  
+436      2015  Male           2493  
+496      2015  Male           1629  
+556      2015  Male            621  
+616      2015  Male             49  
+676      2015  Male            223  
+736      2015  Male          11038  
+796      2015  Male            115  
+856      2015  Male            158  
+916      2015  Male            710  
+976      2015  Male             69  
+1036     2015  Male            595  
+1096     2015  Male             82  
+1156     2015  Male           1216  
+1216     2015  Male           1045  
+1276     2015  Male            382  
+1336     2015  Male          29475  
+1396     2015  Male             72  
+1456     2015  Male            683  
+1516     2015  Male           1014  
+1576     2015  Male            731  
+1636     2015  Male             39  
+1696     2015  Male            799  
+1756     2015  Male           1949  
+      ...   ...            ...  
+9196     2015  Male           5362  
+9256     2015  Male           2382  
+9316     2015  Male            120  
+9376     2015  Male           1099  
+9436     2015  Male            660  
+9496     2015  Male            537  
+9556     2015  Male            404  
+9616     2015  Male           9264  
+9676     2015  Male            373  
+9736     2015  Male             38  
+9796     2015  Male            409  
+9856     2015  Male             35  
+9916     2015  Male            873  
+9976     2015  Male           1623  
+10036    2015  Male           9108  
+10096    2015  Male            304  
+10156    2015  Male           2462  
+10216    2015  Male           1040  
+10276    2015  Male            489  
+10336    2015  Male           3292  
+10396    2015  Male           3342  
+10456    2015  Male          44597  
+10516    2015  Male            463  
+10576    2015  Male           2652  
+10636    2015  Male             37  
+10696    2015  Male           7215  
+10756    2015  Male           7026  
+10816    2015  Male           1512  
+10876    2015  Male            789  
+10936    2015  Male           1412  
+
+[183 rows x 5 columns]
+                                                Location                 Dim2  \
+13                                           Afghanistan  Malignant neoplasms   
+73                                               Albania  Malignant neoplasms   
+133                                              Algeria  Malignant neoplasms   
+193                                               Angola  Malignant neoplasms   
+253                                  Antigua and Barbuda  Malignant neoplasms   
+313                                            Argentina  Malignant neoplasms   
+373                                              Armenia  Malignant neoplasms   
+433                                            Australia  Malignant neoplasms   
+493                                              Austria  Malignant neoplasms   
+553                                           Azerbaijan  Malignant neoplasms   
+613                                              Bahamas  Malignant neoplasms   
+673                                              Bahrain  Malignant neoplasms   
+733                                           Bangladesh  Malignant neoplasms   
+793                                             Barbados  Malignant neoplasms   
+853                                              Belarus  Malignant neoplasms   
+913                                              Belgium  Malignant neoplasms   
+973                                               Belize  Malignant neoplasms   
+1033                                               Benin  Malignant neoplasms   
+1093                                              Bhutan  Malignant neoplasms   
+1153                    Bolivia (Plurinational State of)  Malignant neoplasms   
+1213                              Bosnia and Herzegovina  Malignant neoplasms   
+1273                                            Botswana  Malignant neoplasms   
+1333                                              Brazil  Malignant neoplasms   
+1393                                   Brunei Darussalam  Malignant neoplasms   
+1453                                            Bulgaria  Malignant neoplasms   
+1513                                        Burkina Faso  Malignant neoplasms   
+1573                                             Burundi  Malignant neoplasms   
+1633                                          Cabo Verde  Malignant neoplasms   
+1693                                            Cambodia  Malignant neoplasms   
+1753                                            Cameroon  Malignant neoplasms   
+                                                 ...                  ...   
+9193                                           Sri Lanka  Malignant neoplasms   
+9253                                               Sudan  Malignant neoplasms   
+9313                                            Suriname  Malignant neoplasms   
+9373                                              Sweden  Malignant neoplasms   
+9433                                         Switzerland  Malignant neoplasms   
+9493                                Syrian Arab Republic  Malignant neoplasms   
+9553                                          Tajikistan  Malignant neoplasms   
+9613                                            Thailand  Malignant neoplasms   
+9673           The former Yugoslav Republic of Macedonia  Malignant neoplasms   
+9733                                         Timor-Leste  Malignant neoplasms   
+9793                                                Togo  Malignant neoplasms   
+9853                                               Tonga  Malignant neoplasms   
+9913                                 Trinidad and Tobago  Malignant neoplasms   
+9973                                             Tunisia  Malignant neoplasms   
+10033                                             Turkey  Malignant neoplasms   
+10093                                       Turkmenistan  Malignant neoplasms   
+10153                                             Uganda  Malignant neoplasms   
+10213                                            Ukraine  Malignant neoplasms   
+10273                               United Arab Emirates  Malignant neoplasms   
+10333  United Kingdom of Great Britain and Northern I...  Malignant neoplasms   
+10393                        United Republic of Tanzania  Malignant neoplasms   
+10453                           United States of America  Malignant neoplasms   
+10513                                            Uruguay  Malignant neoplasms   
+10573                                         Uzbekistan  Malignant neoplasms   
+10633                                            Vanuatu  Malignant neoplasms   
+10693                 Venezuela (Bolivarian Republic of)  Malignant neoplasms   
+10753                                           Viet Nam  Malignant neoplasms   
+10813                                              Yemen  Malignant neoplasms   
+10873                                             Zambia  Malignant neoplasms   
+10933                                           Zimbabwe  Malignant neoplasms   
+
+       Period  Dim1  First Tooltip  
+13       2015  Male          10319  
+73       2015  Male           2852  
+133      2015  Male          12180  
+193      2015  Male           3808  
+253      2015  Male             65  
+313      2015  Male          33800  
+373      2015  Male           4428  
+433      2015  Male          25796  
+493      2015  Male          11370  
+553      2015  Male           5767  
+613      2015  Male            271  
+673      2015  Male            234  
+733      2015  Male          52729  
+793      2015  Male            386  
+853      2015  Male          10558  
+913      2015  Male          16014  
+973      2015  Male            163  
+1033     2015  Male           1649  
+1093     2015  Male            250  
+1153     2015  Male           3364  
+1213     2015  Male           4257  
+1273     2015  Male            560  
+1333     2015  Male         121616  
+1393     2015  Male            206  
+1453     2015  Male          11180  
+1513     2015  Male           2814  
+1573     2015  Male           2825  
+1633     2015  Male            138  
+1693     2015  Male           6449  
+1753     2015  Male           5402  
+      ...   ...            ...  
+9193     2015  Male          10383  
+9253     2015  Male           8839  
+9313     2015  Male            320  
+9373     2015  Male          12104  
+9433     2015  Male          10065  
+9493     2015  Male           7396  
+9553     2015  Male           2374  
+9613     2015  Male          53632  
+9673     2015  Male           2396  
+9733     2015  Male            428  
+9793     2015  Male           1375  
+9853     2015  Male             65  
+9913     2015  Male            962  
+9973     2015  Male           5038  
+10033    2015  Male          63923  
+10093    2015  Male           2408  
+10153    2015  Male          13143  
+10213    2015  Male          53152  
+10273    2015  Male            995  
+10333    2015  Male          88755  
+10393    2015  Male          12581  
+10453    2015  Male         323024  
+10513    2015  Male           4641  
+10573    2015  Male           6543  
+10633    2015  Male            106  
+10693    2015  Male          14166  
+10753    2015  Male          55525  
+10813    2015  Male           5029  
+10873    2015  Male           3525  
+10933    2015  Male           3990  
+
+[183 rows x 5 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
