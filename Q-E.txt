@@ -1,0 +1,397 @@
+# Question - E :Types of available dieases
+
+dieases = df.groupby(['Dim2'])[['Period']].count()
+print("---------------------------------")
+print("\tAvailable types of dieases : ")
+print("-------------------------------")
+print(dieases)
+print("-------------------------------")
+count = 0
+for row in range(len(dieases)): 
+        count = count+1
+print("total no. of dieases = ",count)        
+print("-----------------------------\n")
+
+
+#******************* Processing all data 2000 to 2016 ********************
+
+
+df2000 = df[df.Period == 2000]
+print("\n\n--------------[ OUTPUT for 2000 ]----------------------\n\n")
+print(df2000[['Location','Period','Dim1','First Tooltip']])
+
+df2005 = df[df.Period == 2005]
+print("\n\n--------------[ OUTPUT for 2005 ]----------------------\n\n")
+print(df2005[['Location','Period','Dim1','First Tooltip']])
+
+df2010 = df[df.Period == 2010]
+print("\n\n--------------[ OUTPUT for 2010 ]----------------------\n\n")
+print(df2010[['Location','Period','Dim1','First Tooltip']])
+
+df2015 = df[df.Period == 2015]
+print("\n\n--------------[ OUTPUT for 2015 ]----------------------\n\n")
+print(df2015[['Location','Period','Dim1','First Tooltip']])
+
+df2016 = df[df.Period == 2016]
+print("\n\n--------------[ OUTPUT for 2016 ]----------------------\n\n")
+print(df2016[['Location','Period','Dim1','First Tooltip']])
+---------------------------------
+        Available types of dieases : 
+-------------------------------
+                                       Period
+Dim2                                         
+Cardiovascular diseases                  2745
+Chronic obstructive pulmonary disease    2745
+Diabetes mellitus                        2745
+Malignant neoplasms                      2745
+-------------------------------
+total no. of dieases =  4
+-----------------------------
+
+
+
+--------------[ OUTPUT for 2000 ]----------------------
+
+
+          Location  Period        Dim1  First Tooltip
+48     Afghanistan    2000  Both sexes          11473
+49     Afghanistan    2000        Male           5981
+50     Afghanistan    2000      Female           5491
+51     Afghanistan    2000  Both sexes           2975
+52     Afghanistan    2000        Male           1182
+53     Afghanistan    2000      Female           1794
+54     Afghanistan    2000  Both sexes          33427
+55     Afghanistan    2000        Male          18021
+56     Afghanistan    2000      Female          15406
+57     Afghanistan    2000  Both sexes           4391
+58     Afghanistan    2000        Male           2552
+59     Afghanistan    2000      Female           1839
+108        Albania    2000  Both sexes           3744
+109        Albania    2000        Male           2064
+110        Albania    2000      Female           1680
+111        Albania    2000  Both sexes            141
+112        Albania    2000        Male             75
+113        Albania    2000      Female             66
+114        Albania    2000  Both sexes           9940
+115        Albania    2000        Male           5440
+116        Albania    2000      Female           4500
+117        Albania    2000  Both sexes            824
+118        Albania    2000        Male            534
+119        Albania    2000      Female            290
+168        Algeria    2000  Both sexes          15064
+169        Algeria    2000        Male           7794
+170        Algeria    2000      Female           7269
+171        Algeria    2000  Both sexes           4687
+172        Algeria    2000        Male           2301
+173        Algeria    2000      Female           2386
+           ...     ...         ...            ...
+10854        Yemen    2000  Both sexes          40764
+10855        Yemen    2000        Male          20947
+10856        Yemen    2000      Female          19817
+10857        Yemen    2000  Both sexes           5012
+10858        Yemen    2000        Male           2851
+10859        Yemen    2000      Female           2161
+10908       Zambia    2000  Both sexes           5799
+10909       Zambia    2000        Male           1954
+10910       Zambia    2000      Female           3845
+10911       Zambia    2000  Both sexes           1117
+10912       Zambia    2000        Male            586
+10913       Zambia    2000      Female            531
+10914       Zambia    2000  Both sexes          10949
+10915       Zambia    2000        Male           4956
+10916       Zambia    2000      Female           5993
+10917       Zambia    2000  Both sexes           1765
+10918       Zambia    2000        Male            922
+10919       Zambia    2000      Female            843
+10968     Zimbabwe    2000  Both sexes           5872
+10969     Zimbabwe    2000        Male           2883
+10970     Zimbabwe    2000      Female           2989
+10971     Zimbabwe    2000  Both sexes           2295
+10972     Zimbabwe    2000        Male            882
+10973     Zimbabwe    2000      Female           1413
+10974     Zimbabwe    2000  Both sexes          14238
+10975     Zimbabwe    2000        Male           6106
+10976     Zimbabwe    2000      Female           8132
+10977     Zimbabwe    2000  Both sexes           2911
+10978     Zimbabwe    2000        Male           1586
+10979     Zimbabwe    2000      Female           1325
+
+[2196 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2005 ]----------------------
+
+
+          Location  Period        Dim1  First Tooltip
+36     Afghanistan    2005  Both sexes          14574
+37     Afghanistan    2005        Male           7675
+38     Afghanistan    2005      Female           6899
+39     Afghanistan    2005  Both sexes           4109
+40     Afghanistan    2005        Male           1549
+41     Afghanistan    2005      Female           2560
+42     Afghanistan    2005  Both sexes          41179
+43     Afghanistan    2005        Male          22242
+44     Afghanistan    2005      Female          18936
+45     Afghanistan    2005  Both sexes           5496
+46     Afghanistan    2005        Male           3134
+47     Afghanistan    2005      Female           2362
+96         Albania    2005  Both sexes           4385
+97         Albania    2005        Male           2423
+98         Albania    2005      Female           1962
+99         Albania    2005  Both sexes            160
+100        Albania    2005        Male             78
+101        Albania    2005      Female             82
+102        Albania    2005  Both sexes          12540
+103        Albania    2005        Male           6357
+104        Albania    2005      Female           6184
+105        Albania    2005  Both sexes            806
+106        Albania    2005        Male            492
+107        Albania    2005      Female            314
+156        Algeria    2005  Both sexes          17850
+157        Algeria    2005        Male           9074
+158        Algeria    2005      Female           8776
+159        Algeria    2005  Both sexes           5225
+160        Algeria    2005        Male           2508
+161        Algeria    2005      Female           2716
+           ...     ...         ...            ...
+10842        Yemen    2005  Both sexes          45057
+10843        Yemen    2005        Male          22950
+10844        Yemen    2005      Female          22106
+10845        Yemen    2005  Both sexes           5299
+10846        Yemen    2005        Male           2976
+10847        Yemen    2005      Female           2322
+10896       Zambia    2005  Both sexes           6296
+10897       Zambia    2005        Male           2480
+10898       Zambia    2005      Female           3816
+10899       Zambia    2005  Both sexes           1119
+10900       Zambia    2005        Male            599
+10901       Zambia    2005      Female            520
+10902       Zambia    2005  Both sexes          10730
+10903       Zambia    2005        Male           4699
+10904       Zambia    2005      Female           6031
+10905       Zambia    2005  Both sexes           1719
+10906       Zambia    2005        Male            869
+10907       Zambia    2005      Female            851
+10956     Zimbabwe    2005  Both sexes           7519
+10957     Zimbabwe    2005        Male           3499
+10958     Zimbabwe    2005      Female           4020
+10959     Zimbabwe    2005  Both sexes           2906
+10960     Zimbabwe    2005        Male           1260
+10961     Zimbabwe    2005      Female           1646
+10962     Zimbabwe    2005  Both sexes          14463
+10963     Zimbabwe    2005        Male           5935
+10964     Zimbabwe    2005      Female           8529
+10965     Zimbabwe    2005  Both sexes           3031
+10966     Zimbabwe    2005        Male           1536
+10967     Zimbabwe    2005      Female           1495
+
+[2196 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2010 ]----------------------
+
+
+          Location  Period        Dim1  First Tooltip
+24     Afghanistan    2010  Both sexes          16199
+25     Afghanistan    2010        Male           8540
+26     Afghanistan    2010      Female           7659
+27     Afghanistan    2010  Both sexes           4852
+28     Afghanistan    2010        Male           1797
+29     Afghanistan    2010      Female           3056
+30     Afghanistan    2010  Both sexes          43842
+31     Afghanistan    2010        Male          23248
+32     Afghanistan    2010      Female          20594
+33     Afghanistan    2010  Both sexes           5706
+34     Afghanistan    2010        Male           3148
+35     Afghanistan    2010      Female           2558
+84         Albania    2010  Both sexes           4700
+85         Albania    2010        Male           2640
+86         Albania    2010      Female           2060
+87         Albania    2010  Both sexes            141
+88         Albania    2010        Male             74
+89         Albania    2010      Female             68
+90         Albania    2010  Both sexes          12796
+91         Albania    2010        Male           6819
+92         Albania    2010      Female           5977
+93         Albania    2010  Both sexes            737
+94         Albania    2010        Male            474
+95         Albania    2010      Female            263
+144        Algeria    2010  Both sexes          20548
+145        Algeria    2010        Male          10236
+146        Algeria    2010      Female          10311
+147        Algeria    2010  Both sexes           6754
+148        Algeria    2010        Male           3256
+149        Algeria    2010      Female           3498
+           ...     ...         ...            ...
+10830        Yemen    2010  Both sexes          49897
+10831        Yemen    2010        Male          25220
+10832        Yemen    2010      Female          24677
+10833        Yemen    2010  Both sexes           5795
+10834        Yemen    2010        Male           3152
+10835        Yemen    2010      Female           2643
+10884       Zambia    2010  Both sexes           6948
+10885       Zambia    2010        Male           2985
+10886       Zambia    2010      Female           3962
+10887       Zambia    2010  Both sexes           1261
+10888       Zambia    2010        Male            684
+10889       Zambia    2010      Female            577
+10890       Zambia    2010  Both sexes          11521
+10891       Zambia    2010        Male           4998
+10892       Zambia    2010      Female           6523
+10893       Zambia    2010  Both sexes           1799
+10894       Zambia    2010        Male            901
+10895       Zambia    2010      Female            897
+10944     Zimbabwe    2010  Both sexes           7793
+10945     Zimbabwe    2010        Male           3663
+10946     Zimbabwe    2010      Female           4130
+10947     Zimbabwe    2010  Both sexes           3071
+10948     Zimbabwe    2010        Male           1314
+10949     Zimbabwe    2010      Female           1757
+10950     Zimbabwe    2010  Both sexes          14289
+10951     Zimbabwe    2010        Male           5601
+10952     Zimbabwe    2010      Female           8688
+10953     Zimbabwe    2010  Both sexes           3008
+10954     Zimbabwe    2010        Male           1452
+10955     Zimbabwe    2010      Female           1556
+
+[2196 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2015 ]----------------------
+
+
+          Location  Period        Dim1  First Tooltip
+12     Afghanistan    2015  Both sexes          19290
+13     Afghanistan    2015        Male          10319
+14     Afghanistan    2015      Female           8972
+15     Afghanistan    2015  Both sexes           6523
+16     Afghanistan    2015        Male           2276
+17     Afghanistan    2015      Female           4247
+18     Afghanistan    2015  Both sexes          49050
+19     Afghanistan    2015        Male          25728
+20     Afghanistan    2015      Female          23322
+21     Afghanistan    2015  Both sexes           6440
+22     Afghanistan    2015        Male           3432
+23     Afghanistan    2015      Female           3008
+72         Albania    2015  Both sexes           5057
+73         Albania    2015        Male           2852
+74         Albania    2015      Female           2206
+75         Albania    2015  Both sexes            168
+76         Albania    2015        Male             88
+77         Albania    2015      Female             81
+78         Albania    2015  Both sexes          14897
+79         Albania    2015        Male           7951
+80         Albania    2015      Female           6946
+81         Albania    2015  Both sexes            880
+82         Albania    2015        Male            563
+83         Albania    2015      Female            317
+132        Algeria    2015  Both sexes          24312
+133        Algeria    2015        Male          12180
+134        Algeria    2015      Female          12131
+135        Algeria    2015  Both sexes           8113
+136        Algeria    2015        Male           3866
+137        Algeria    2015      Female           4247
+           ...     ...         ...            ...
+10818        Yemen    2015  Both sexes          54837
+10819        Yemen    2015        Male          27614
+10820        Yemen    2015      Female          27223
+10821        Yemen    2015  Both sexes           6176
+10822        Yemen    2015        Male           3343
+10823        Yemen    2015      Female           2832
+10872       Zambia    2015  Both sexes           7759
+10873       Zambia    2015        Male           3525
+10874       Zambia    2015      Female           4234
+10875       Zambia    2015  Both sexes           1411
+10876       Zambia    2015        Male            789
+10877       Zambia    2015      Female            622
+10878       Zambia    2015  Both sexes          12122
+10879       Zambia    2015        Male           5357
+10880       Zambia    2015      Female           6765
+10881       Zambia    2015  Both sexes           1869
+10882       Zambia    2015        Male            915
+10883       Zambia    2015      Female            954
+10932     Zimbabwe    2015  Both sexes           8568
+10933     Zimbabwe    2015        Male           3990
+10934     Zimbabwe    2015      Female           4579
+10935     Zimbabwe    2015  Both sexes           3431
+10936     Zimbabwe    2015        Male           1412
+10937     Zimbabwe    2015      Female           2018
+10938     Zimbabwe    2015  Both sexes          13930
+10939     Zimbabwe    2015        Male           5331
+10940     Zimbabwe    2015      Female           8599
+10941     Zimbabwe    2015  Both sexes           2921
+10942     Zimbabwe    2015        Male           1326
+10943     Zimbabwe    2015      Female           1595
+
+[2196 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2016 ]----------------------
+
+
+          Location  Period        Dim1  First Tooltip
+0      Afghanistan    2016  Both sexes          19965
+1      Afghanistan    2016        Male          10702
+2      Afghanistan    2016      Female           9263
+3      Afghanistan    2016  Both sexes           7056
+4      Afghanistan    2016        Male           2437
+5      Afghanistan    2016      Female           4620
+6      Afghanistan    2016  Both sexes          51244
+7      Afghanistan    2016        Male          26828
+8      Afghanistan    2016      Female          24416
+9      Afghanistan    2016  Both sexes           6715
+10     Afghanistan    2016        Male           3560
+11     Afghanistan    2016      Female           3154
+60         Albania    2016  Both sexes           5138
+61         Albania    2016        Male           2903
+62         Albania    2016      Female           2235
+63         Albania    2016  Both sexes            168
+64         Albania    2016        Male             89
+65         Albania    2016      Female             79
+66         Albania    2016  Both sexes          14930
+67         Albania    2016        Male           8095
+68         Albania    2016      Female           6835
+69         Albania    2016  Both sexes            887
+70         Albania    2016        Male            573
+71         Albania    2016      Female            314
+120        Algeria    2016  Both sexes          25166
+121        Algeria    2016        Male          12619
+122        Algeria    2016      Female          12547
+123        Algeria    2016  Both sexes           8390
+124        Algeria    2016        Male           3985
+125        Algeria    2016      Female           4405
+           ...     ...         ...            ...
+10806        Yemen    2016  Both sexes          56793
+10807        Yemen    2016        Male          28574
+10808        Yemen    2016      Female          28219
+10809        Yemen    2016  Both sexes           6395
+10810        Yemen    2016        Male           3476
+10811        Yemen    2016      Female           2919
+10860       Zambia    2016  Both sexes           8024
+10861       Zambia    2016        Male           3661
+10862       Zambia    2016      Female           4363
+10863       Zambia    2016  Both sexes           1475
+10864       Zambia    2016        Male            829
+10865       Zambia    2016      Female            646
+10866       Zambia    2016  Both sexes          12483
+10867       Zambia    2016        Male           5533
+10868       Zambia    2016      Female           6950
+10869       Zambia    2016  Both sexes           1910
+10870       Zambia    2016        Male            933
+10871       Zambia    2016      Female            977
+10920     Zimbabwe    2016  Both sexes           8872
+10921     Zimbabwe    2016        Male           4136
+10922     Zimbabwe    2016      Female           4736
+10923     Zimbabwe    2016  Both sexes           3590
+10924     Zimbabwe    2016        Male           1490
+10925     Zimbabwe    2016      Female           2100
+10926     Zimbabwe    2016  Both sexes          14184
+10927     Zimbabwe    2016        Male           5480
+10928     Zimbabwe    2016      Female           8704
+10929     Zimbabwe    2016  Both sexes           2970
+10930     Zimbabwe    2016        Male           1345
+10931     Zimbabwe    2016      Female           1625
+
+[2196 rows x 4 columns]
+
+In [169]:
