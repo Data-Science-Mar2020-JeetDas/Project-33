@@ -1,0 +1,870 @@
+#------------- Question-05 : 2016 : For Both Sexes---------------------
+
+df2016_both = df2016[df2016.Dim1 == 'Both sexes']
+print("\n\n--------------[ OUTPUT for 2016 Both sexes ]----------------------\n\n")
+print(df2016_both[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2016_both[df2016_both.Dim2 == 'Cardiovascular diseases']
+df2 = df2016_both[df2016_both.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2016_both[df2016_both.Dim2 == 'Diabetes mellitus']
+df4 = df2016_both[df2016_both.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 05 : 2016 : For Both Sexes')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2016 Both sexes ]----------------------
+
+
+                                 Location  \
+0                             Afghanistan   
+3                             Afghanistan   
+6                             Afghanistan   
+9                             Afghanistan   
+60                                Albania   
+63                                Albania   
+66                                Albania   
+69                                Albania   
+120                               Algeria   
+123                               Algeria   
+126                               Algeria   
+129                               Algeria   
+180                                Angola   
+183                                Angola   
+186                                Angola   
+189                                Angola   
+240                   Antigua and Barbuda   
+243                   Antigua and Barbuda   
+246                   Antigua and Barbuda   
+249                   Antigua and Barbuda   
+300                             Argentina   
+303                             Argentina   
+306                             Argentina   
+309                             Argentina   
+360                               Armenia   
+363                               Armenia   
+366                               Armenia   
+369                               Armenia   
+420                             Australia   
+423                             Australia   
+                                  ...   
+10506                             Uruguay   
+10509                             Uruguay   
+10560                          Uzbekistan   
+10563                          Uzbekistan   
+10566                          Uzbekistan   
+10569                          Uzbekistan   
+10620                             Vanuatu   
+10623                             Vanuatu   
+10626                             Vanuatu   
+10629                             Vanuatu   
+10680  Venezuela (Bolivarian Republic of)   
+10683  Venezuela (Bolivarian Republic of)   
+10686  Venezuela (Bolivarian Republic of)   
+10689  Venezuela (Bolivarian Republic of)   
+10740                            Viet Nam   
+10743                            Viet Nam   
+10746                            Viet Nam   
+10749                            Viet Nam   
+10800                               Yemen   
+10803                               Yemen   
+10806                               Yemen   
+10809                               Yemen   
+10860                              Zambia   
+10863                              Zambia   
+10866                              Zambia   
+10869                              Zambia   
+10920                            Zimbabwe   
+10923                            Zimbabwe   
+10926                            Zimbabwe   
+10929                            Zimbabwe   
+
+                                        Dim2  Period        Dim1  \
+0                        Malignant neoplasms    2016  Both sexes   
+3                          Diabetes mellitus    2016  Both sexes   
+6                    Cardiovascular diseases    2016  Both sexes   
+9      Chronic obstructive pulmonary disease    2016  Both sexes   
+60                       Malignant neoplasms    2016  Both sexes   
+63                         Diabetes mellitus    2016  Both sexes   
+66                   Cardiovascular diseases    2016  Both sexes   
+69     Chronic obstructive pulmonary disease    2016  Both sexes   
+120                      Malignant neoplasms    2016  Both sexes   
+123                        Diabetes mellitus    2016  Both sexes   
+126                  Cardiovascular diseases    2016  Both sexes   
+129    Chronic obstructive pulmonary disease    2016  Both sexes   
+180                      Malignant neoplasms    2016  Both sexes   
+183                        Diabetes mellitus    2016  Both sexes   
+186                  Cardiovascular diseases    2016  Both sexes   
+189    Chronic obstructive pulmonary disease    2016  Both sexes   
+240                      Malignant neoplasms    2016  Both sexes   
+243                        Diabetes mellitus    2016  Both sexes   
+246                  Cardiovascular diseases    2016  Both sexes   
+249    Chronic obstructive pulmonary disease    2016  Both sexes   
+300                      Malignant neoplasms    2016  Both sexes   
+303                        Diabetes mellitus    2016  Both sexes   
+306                  Cardiovascular diseases    2016  Both sexes   
+309    Chronic obstructive pulmonary disease    2016  Both sexes   
+360                      Malignant neoplasms    2016  Both sexes   
+363                        Diabetes mellitus    2016  Both sexes   
+366                  Cardiovascular diseases    2016  Both sexes   
+369    Chronic obstructive pulmonary disease    2016  Both sexes   
+420                      Malignant neoplasms    2016  Both sexes   
+423                        Diabetes mellitus    2016  Both sexes   
+                                     ...     ...         ...   
+10506                Cardiovascular diseases    2016  Both sexes   
+10509  Chronic obstructive pulmonary disease    2016  Both sexes   
+10560                    Malignant neoplasms    2016  Both sexes   
+10563                      Diabetes mellitus    2016  Both sexes   
+10566                Cardiovascular diseases    2016  Both sexes   
+10569  Chronic obstructive pulmonary disease    2016  Both sexes   
+10620                    Malignant neoplasms    2016  Both sexes   
+10623                      Diabetes mellitus    2016  Both sexes   
+10626                Cardiovascular diseases    2016  Both sexes   
+10629  Chronic obstructive pulmonary disease    2016  Both sexes   
+10680                    Malignant neoplasms    2016  Both sexes   
+10683                      Diabetes mellitus    2016  Both sexes   
+10686                Cardiovascular diseases    2016  Both sexes   
+10689  Chronic obstructive pulmonary disease    2016  Both sexes   
+10740                    Malignant neoplasms    2016  Both sexes   
+10743                      Diabetes mellitus    2016  Both sexes   
+10746                Cardiovascular diseases    2016  Both sexes   
+10749  Chronic obstructive pulmonary disease    2016  Both sexes   
+10800                    Malignant neoplasms    2016  Both sexes   
+10803                      Diabetes mellitus    2016  Both sexes   
+10806                Cardiovascular diseases    2016  Both sexes   
+10809  Chronic obstructive pulmonary disease    2016  Both sexes   
+10860                    Malignant neoplasms    2016  Both sexes   
+10863                      Diabetes mellitus    2016  Both sexes   
+10866                Cardiovascular diseases    2016  Both sexes   
+10869  Chronic obstructive pulmonary disease    2016  Both sexes   
+10920                    Malignant neoplasms    2016  Both sexes   
+10923                      Diabetes mellitus    2016  Both sexes   
+10926                Cardiovascular diseases    2016  Both sexes   
+10929  Chronic obstructive pulmonary disease    2016  Both sexes   
+
+       First Tooltip  
+0              19965  
+3               7056  
+6              51244  
+9               6715  
+60              5138  
+63               168  
+66             14930  
+69               887  
+120            25166  
+123             8390  
+126            69173  
+129             5965  
+180             8455  
+183             2379  
+186            22541  
+189             3602  
+240              134  
+243               53  
+246              212  
+249               28  
+300            65657  
+303             9233  
+306            91028  
+309            34425  
+360             7953  
+363             1093  
+366            12288  
+369             1156  
+420            45749  
+423             4754  
+             ...  
+10506           9233  
+10509           2671  
+10560          13846  
+10563           5714  
+10566          98917  
+10569           3554  
+10620            200  
+10623             79  
+10626            440  
+10629             87  
+10680          28570  
+10683          14933  
+10686          54182  
+10689           7212  
+10740         102283  
+10743          20754  
+10746         172313  
+10749          30627  
+10800          10454  
+10803           3854  
+10806          56793  
+10809           6395  
+10860           8024  
+10863           1475  
+10866          12483  
+10869           1910  
+10920           8872  
+10923           3590  
+10926          14184  
+10929           2970  
+
+[732 rows x 5 columns]
+                                                Location  \
+6                                            Afghanistan   
+66                                               Albania   
+126                                              Algeria   
+186                                               Angola   
+246                                  Antigua and Barbuda   
+306                                            Argentina   
+366                                              Armenia   
+426                                            Australia   
+486                                              Austria   
+546                                           Azerbaijan   
+606                                              Bahamas   
+666                                              Bahrain   
+726                                           Bangladesh   
+786                                             Barbados   
+846                                              Belarus   
+906                                              Belgium   
+966                                               Belize   
+1026                                               Benin   
+1086                                              Bhutan   
+1146                    Bolivia (Plurinational State of)   
+1206                              Bosnia and Herzegovina   
+1266                                            Botswana   
+1326                                              Brazil   
+1386                                   Brunei Darussalam   
+1446                                            Bulgaria   
+1506                                        Burkina Faso   
+1566                                             Burundi   
+1626                                          Cabo Verde   
+1686                                            Cambodia   
+1746                                            Cameroon   
+                                                 ...   
+9186                                           Sri Lanka   
+9246                                               Sudan   
+9306                                            Suriname   
+9366                                              Sweden   
+9426                                         Switzerland   
+9486                                Syrian Arab Republic   
+9546                                          Tajikistan   
+9606                                            Thailand   
+9666           The former Yugoslav Republic of Macedonia   
+9726                                         Timor-Leste   
+9786                                                Togo   
+9846                                               Tonga   
+9906                                 Trinidad and Tobago   
+9966                                             Tunisia   
+10026                                             Turkey   
+10086                                       Turkmenistan   
+10146                                             Uganda   
+10206                                            Ukraine   
+10266                               United Arab Emirates   
+10326  United Kingdom of Great Britain and Northern I...   
+10386                        United Republic of Tanzania   
+10446                           United States of America   
+10506                                            Uruguay   
+10566                                         Uzbekistan   
+10626                                            Vanuatu   
+10686                 Venezuela (Bolivarian Republic of)   
+10746                                           Viet Nam   
+10806                                              Yemen   
+10866                                             Zambia   
+10926                                           Zimbabwe   
+
+                          Dim2  Period        Dim1  First Tooltip  
+6      Cardiovascular diseases    2016  Both sexes          51244  
+66     Cardiovascular diseases    2016  Both sexes          14930  
+126    Cardiovascular diseases    2016  Both sexes          69173  
+186    Cardiovascular diseases    2016  Both sexes          22541  
+246    Cardiovascular diseases    2016  Both sexes            212  
+306    Cardiovascular diseases    2016  Both sexes          91028  
+366    Cardiovascular diseases    2016  Both sexes          12288  
+426    Cardiovascular diseases    2016  Both sexes          44042  
+486    Cardiovascular diseases    2016  Both sexes          33017  
+546    Cardiovascular diseases    2016  Both sexes          32390  
+606    Cardiovascular diseases    2016  Both sexes            727  
+666    Cardiovascular diseases    2016  Both sexes            775  
+726    Cardiovascular diseases    2016  Both sexes         257555  
+786    Cardiovascular diseases    2016  Both sexes            947  
+846    Cardiovascular diseases    2016  Both sexes          73656  
+906    Cardiovascular diseases    2016  Both sexes          30963  
+966    Cardiovascular diseases    2016  Both sexes            514  
+1026   Cardiovascular diseases    2016  Both sexes          13423  
+1086   Cardiovascular diseases    2016  Both sexes           1330  
+1146   Cardiovascular diseases    2016  Both sexes          16707  
+1206   Cardiovascular diseases    2016  Both sexes          20279  
+1266   Cardiovascular diseases    2016  Both sexes           2910  
+1326   Cardiovascular diseases    2016  Both sexes         369072  
+1386   Cardiovascular diseases    2016  Both sexes            472  
+1446   Cardiovascular diseases    2016  Both sexes          67831  
+1506   Cardiovascular diseases    2016  Both sexes          20377  
+1566   Cardiovascular diseases    2016  Both sexes          11079  
+1626   Cardiovascular diseases    2016  Both sexes           1059  
+1686   Cardiovascular diseases    2016  Both sexes          22536  
+1746   Cardiovascular diseases    2016  Both sexes          28623  
+                       ...     ...         ...            ...  
+9186   Cardiovascular diseases    2016  Both sexes          48601  
+9246   Cardiovascular diseases    2016  Both sexes          80311  
+9306   Cardiovascular diseases    2016  Both sexes           1326  
+9366   Cardiovascular diseases    2016  Both sexes          31646  
+9426   Cardiovascular diseases    2016  Both sexes          21325  
+9486   Cardiovascular diseases    2016  Both sexes          37885  
+9546   Cardiovascular diseases    2016  Both sexes          19166  
+9606   Cardiovascular diseases    2016  Both sexes         124722  
+9666   Cardiovascular diseases    2016  Both sexes          12234  
+9726   Cardiovascular diseases    2016  Both sexes           1318  
+9786   Cardiovascular diseases    2016  Both sexes          10519  
+9846   Cardiovascular diseases    2016  Both sexes            155  
+9906   Cardiovascular diseases    2016  Both sexes           3945  
+9966   Cardiovascular diseases    2016  Both sexes          31987  
+10026  Cardiovascular diseases    2016  Both sexes         156616  
+10086  Cardiovascular diseases    2016  Both sexes          18449  
+10146  Cardiovascular diseases    2016  Both sexes          29643  
+10206  Cardiovascular diseases    2016  Both sexes         402391  
+10266  Cardiovascular diseases    2016  Both sexes           5970  
+10326  Cardiovascular diseases    2016  Both sexes         150442  
+10386  Cardiovascular diseases    2016  Both sexes          51617  
+10446  Cardiovascular diseases    2016  Both sexes         837250  
+10506  Cardiovascular diseases    2016  Both sexes           9233  
+10566  Cardiovascular diseases    2016  Both sexes          98917  
+10626  Cardiovascular diseases    2016  Both sexes            440  
+10686  Cardiovascular diseases    2016  Both sexes          54182  
+10746  Cardiovascular diseases    2016  Both sexes         172313  
+10806  Cardiovascular diseases    2016  Both sexes          56793  
+10866  Cardiovascular diseases    2016  Both sexes          12483  
+10926  Cardiovascular diseases    2016  Both sexes          14184  
+
+[183 rows x 5 columns]
+                                                Location  \
+9                                            Afghanistan   
+69                                               Albania   
+129                                              Algeria   
+189                                               Angola   
+249                                  Antigua and Barbuda   
+309                                            Argentina   
+369                                              Armenia   
+429                                            Australia   
+489                                              Austria   
+549                                           Azerbaijan   
+609                                              Bahamas   
+669                                              Bahrain   
+729                                           Bangladesh   
+789                                             Barbados   
+849                                              Belarus   
+909                                              Belgium   
+969                                               Belize   
+1029                                               Benin   
+1089                                              Bhutan   
+1149                    Bolivia (Plurinational State of)   
+1209                              Bosnia and Herzegovina   
+1269                                            Botswana   
+1329                                              Brazil   
+1389                                   Brunei Darussalam   
+1449                                            Bulgaria   
+1509                                        Burkina Faso   
+1569                                             Burundi   
+1629                                          Cabo Verde   
+1689                                            Cambodia   
+1749                                            Cameroon   
+                                                 ...   
+9189                                           Sri Lanka   
+9249                                               Sudan   
+9309                                            Suriname   
+9369                                              Sweden   
+9429                                         Switzerland   
+9489                                Syrian Arab Republic   
+9549                                          Tajikistan   
+9609                                            Thailand   
+9669           The former Yugoslav Republic of Macedonia   
+9729                                         Timor-Leste   
+9789                                                Togo   
+9849                                               Tonga   
+9909                                 Trinidad and Tobago   
+9969                                             Tunisia   
+10029                                             Turkey   
+10089                                       Turkmenistan   
+10149                                             Uganda   
+10209                                            Ukraine   
+10269                               United Arab Emirates   
+10329  United Kingdom of Great Britain and Northern I...   
+10389                        United Republic of Tanzania   
+10449                           United States of America   
+10509                                            Uruguay   
+10569                                         Uzbekistan   
+10629                                            Vanuatu   
+10689                 Venezuela (Bolivarian Republic of)   
+10749                                           Viet Nam   
+10809                                              Yemen   
+10869                                             Zambia   
+10929                                           Zimbabwe   
+
+                                        Dim2  Period        Dim1  \
+9      Chronic obstructive pulmonary disease    2016  Both sexes   
+69     Chronic obstructive pulmonary disease    2016  Both sexes   
+129    Chronic obstructive pulmonary disease    2016  Both sexes   
+189    Chronic obstructive pulmonary disease    2016  Both sexes   
+249    Chronic obstructive pulmonary disease    2016  Both sexes   
+309    Chronic obstructive pulmonary disease    2016  Both sexes   
+369    Chronic obstructive pulmonary disease    2016  Both sexes   
+429    Chronic obstructive pulmonary disease    2016  Both sexes   
+489    Chronic obstructive pulmonary disease    2016  Both sexes   
+549    Chronic obstructive pulmonary disease    2016  Both sexes   
+609    Chronic obstructive pulmonary disease    2016  Both sexes   
+669    Chronic obstructive pulmonary disease    2016  Both sexes   
+729    Chronic obstructive pulmonary disease    2016  Both sexes   
+789    Chronic obstructive pulmonary disease    2016  Both sexes   
+849    Chronic obstructive pulmonary disease    2016  Both sexes   
+909    Chronic obstructive pulmonary disease    2016  Both sexes   
+969    Chronic obstructive pulmonary disease    2016  Both sexes   
+1029   Chronic obstructive pulmonary disease    2016  Both sexes   
+1089   Chronic obstructive pulmonary disease    2016  Both sexes   
+1149   Chronic obstructive pulmonary disease    2016  Both sexes   
+1209   Chronic obstructive pulmonary disease    2016  Both sexes   
+1269   Chronic obstructive pulmonary disease    2016  Both sexes   
+1329   Chronic obstructive pulmonary disease    2016  Both sexes   
+1389   Chronic obstructive pulmonary disease    2016  Both sexes   
+1449   Chronic obstructive pulmonary disease    2016  Both sexes   
+1509   Chronic obstructive pulmonary disease    2016  Both sexes   
+1569   Chronic obstructive pulmonary disease    2016  Both sexes   
+1629   Chronic obstructive pulmonary disease    2016  Both sexes   
+1689   Chronic obstructive pulmonary disease    2016  Both sexes   
+1749   Chronic obstructive pulmonary disease    2016  Both sexes   
+                                     ...     ...         ...   
+9189   Chronic obstructive pulmonary disease    2016  Both sexes   
+9249   Chronic obstructive pulmonary disease    2016  Both sexes   
+9309   Chronic obstructive pulmonary disease    2016  Both sexes   
+9369   Chronic obstructive pulmonary disease    2016  Both sexes   
+9429   Chronic obstructive pulmonary disease    2016  Both sexes   
+9489   Chronic obstructive pulmonary disease    2016  Both sexes   
+9549   Chronic obstructive pulmonary disease    2016  Both sexes   
+9609   Chronic obstructive pulmonary disease    2016  Both sexes   
+9669   Chronic obstructive pulmonary disease    2016  Both sexes   
+9729   Chronic obstructive pulmonary disease    2016  Both sexes   
+9789   Chronic obstructive pulmonary disease    2016  Both sexes   
+9849   Chronic obstructive pulmonary disease    2016  Both sexes   
+9909   Chronic obstructive pulmonary disease    2016  Both sexes   
+9969   Chronic obstructive pulmonary disease    2016  Both sexes   
+10029  Chronic obstructive pulmonary disease    2016  Both sexes   
+10089  Chronic obstructive pulmonary disease    2016  Both sexes   
+10149  Chronic obstructive pulmonary disease    2016  Both sexes   
+10209  Chronic obstructive pulmonary disease    2016  Both sexes   
+10269  Chronic obstructive pulmonary disease    2016  Both sexes   
+10329  Chronic obstructive pulmonary disease    2016  Both sexes   
+10389  Chronic obstructive pulmonary disease    2016  Both sexes   
+10449  Chronic obstructive pulmonary disease    2016  Both sexes   
+10509  Chronic obstructive pulmonary disease    2016  Both sexes   
+10569  Chronic obstructive pulmonary disease    2016  Both sexes   
+10629  Chronic obstructive pulmonary disease    2016  Both sexes   
+10689  Chronic obstructive pulmonary disease    2016  Both sexes   
+10749  Chronic obstructive pulmonary disease    2016  Both sexes   
+10809  Chronic obstructive pulmonary disease    2016  Both sexes   
+10869  Chronic obstructive pulmonary disease    2016  Both sexes   
+10929  Chronic obstructive pulmonary disease    2016  Both sexes   
+
+       First Tooltip  
+9               6715  
+69               887  
+129             5965  
+189             3602  
+249               28  
+309            34425  
+369             1156  
+429            11738  
+489             4108  
+549             1911  
+609               40  
+669               96  
+729            82293  
+789              114  
+849             2172  
+909             8648  
+969               65  
+1029            2381  
+1089             419  
+1149            3304  
+1209            1448  
+1269             612  
+1329           84749  
+1389              99  
+1449            4612  
+1509            2416  
+1569            2005  
+1629             114  
+1689            3817  
+1749            5323  
+             ...  
+9189           11831  
+9249            8730  
+9309              97  
+9369            5214  
+9429            3625  
+9489            2742  
+9549            1775  
+9609           30746  
+9669             911  
+9729             264  
+9789            1664  
+9849              39  
+9909             405  
+9969            3115  
+10029          30282  
+10089            467  
+10149           5447  
+10209          13068  
+10269            825  
+10329          50026  
+10389           6997  
+10449         246944  
+10509           2671  
+10569           3554  
+10629             87  
+10689           7212  
+10749          30627  
+10809           6395  
+10869           1910  
+10929           2970  
+
+[183 rows x 5 columns]
+                                                Location               Dim2  \
+3                                            Afghanistan  Diabetes mellitus   
+63                                               Albania  Diabetes mellitus   
+123                                              Algeria  Diabetes mellitus   
+183                                               Angola  Diabetes mellitus   
+243                                  Antigua and Barbuda  Diabetes mellitus   
+303                                            Argentina  Diabetes mellitus   
+363                                              Armenia  Diabetes mellitus   
+423                                            Australia  Diabetes mellitus   
+483                                              Austria  Diabetes mellitus   
+543                                           Azerbaijan  Diabetes mellitus   
+603                                              Bahamas  Diabetes mellitus   
+663                                              Bahrain  Diabetes mellitus   
+723                                           Bangladesh  Diabetes mellitus   
+783                                             Barbados  Diabetes mellitus   
+843                                              Belarus  Diabetes mellitus   
+903                                              Belgium  Diabetes mellitus   
+963                                               Belize  Diabetes mellitus   
+1023                                               Benin  Diabetes mellitus   
+1083                                              Bhutan  Diabetes mellitus   
+1143                    Bolivia (Plurinational State of)  Diabetes mellitus   
+1203                              Bosnia and Herzegovina  Diabetes mellitus   
+1263                                            Botswana  Diabetes mellitus   
+1323                                              Brazil  Diabetes mellitus   
+1383                                   Brunei Darussalam  Diabetes mellitus   
+1443                                            Bulgaria  Diabetes mellitus   
+1503                                        Burkina Faso  Diabetes mellitus   
+1563                                             Burundi  Diabetes mellitus   
+1623                                          Cabo Verde  Diabetes mellitus   
+1683                                            Cambodia  Diabetes mellitus   
+1743                                            Cameroon  Diabetes mellitus   
+                                                 ...                ...   
+9183                                           Sri Lanka  Diabetes mellitus   
+9243                                               Sudan  Diabetes mellitus   
+9303                                            Suriname  Diabetes mellitus   
+9363                                              Sweden  Diabetes mellitus   
+9423                                         Switzerland  Diabetes mellitus   
+9483                                Syrian Arab Republic  Diabetes mellitus   
+9543                                          Tajikistan  Diabetes mellitus   
+9603                                            Thailand  Diabetes mellitus   
+9663           The former Yugoslav Republic of Macedonia  Diabetes mellitus   
+9723                                         Timor-Leste  Diabetes mellitus   
+9783                                                Togo  Diabetes mellitus   
+9843                                               Tonga  Diabetes mellitus   
+9903                                 Trinidad and Tobago  Diabetes mellitus   
+9963                                             Tunisia  Diabetes mellitus   
+10023                                             Turkey  Diabetes mellitus   
+10083                                       Turkmenistan  Diabetes mellitus   
+10143                                             Uganda  Diabetes mellitus   
+10203                                            Ukraine  Diabetes mellitus   
+10263                               United Arab Emirates  Diabetes mellitus   
+10323  United Kingdom of Great Britain and Northern I...  Diabetes mellitus   
+10383                        United Republic of Tanzania  Diabetes mellitus   
+10443                           United States of America  Diabetes mellitus   
+10503                                            Uruguay  Diabetes mellitus   
+10563                                         Uzbekistan  Diabetes mellitus   
+10623                                            Vanuatu  Diabetes mellitus   
+10683                 Venezuela (Bolivarian Republic of)  Diabetes mellitus   
+10743                                           Viet Nam  Diabetes mellitus   
+10803                                              Yemen  Diabetes mellitus   
+10863                                             Zambia  Diabetes mellitus   
+10923                                           Zimbabwe  Diabetes mellitus   
+
+       Period        Dim1  First Tooltip  
+3        2016  Both sexes           7056  
+63       2016  Both sexes            168  
+123      2016  Both sexes           8390  
+183      2016  Both sexes           2379  
+243      2016  Both sexes             53  
+303      2016  Both sexes           9233  
+363      2016  Both sexes           1093  
+423      2016  Both sexes           4754  
+483      2016  Both sexes           3402  
+543      2016  Both sexes           1475  
+603      2016  Both sexes            119  
+663      2016  Both sexes            404  
+723      2016  Both sexes          28065  
+783      2016  Both sexes            286  
+843      2016  Both sexes            404  
+903      2016  Both sexes           1683  
+963      2016  Both sexes            160  
+1023     2016  Both sexes           1515  
+1083     2016  Both sexes            207  
+1143     2016  Both sexes           2867  
+1203     2016  Both sexes           2552  
+1263     2016  Both sexes            977  
+1323     2016  Both sexes          65381  
+1383     2016  Both sexes            140  
+1443     2016  Both sexes           1585  
+1503     2016  Both sexes           2105  
+1563     2016  Both sexes           1251  
+1623     2016  Both sexes            134  
+1683     2016  Both sexes           2192  
+1743     2016  Both sexes           4567  
+      ...         ...            ...  
+9183     2016  Both sexes          12399  
+9243     2016  Both sexes           5774  
+9303     2016  Both sexes            254  
+9363     2016  Both sexes           2124  
+9423     2016  Both sexes           1381  
+9483     2016  Both sexes           1322  
+9543     2016  Both sexes            809  
+9603     2016  Both sexes          23929  
+9663     2016  Both sexes            927  
+9723     2016  Both sexes            104  
+9783     2016  Both sexes            992  
+9843     2016  Both sexes             82  
+9903     2016  Both sexes           1860  
+9963     2016  Both sexes           3523  
+10023    2016  Both sexes          21788  
+10083    2016  Both sexes            691  
+10143    2016  Both sexes           4564  
+10203    2016  Both sexes           2546  
+10263    2016  Both sexes            707  
+10323    2016  Both sexes           6553  
+10383    2016  Both sexes           6444  
+10443    2016  Both sexes          84332  
+10503    2016  Both sexes            934  
+10563    2016  Both sexes           5714  
+10623    2016  Both sexes             79  
+10683    2016  Both sexes          14933  
+10743    2016  Both sexes          20754  
+10803    2016  Both sexes           3854  
+10863    2016  Both sexes           1475  
+10923    2016  Both sexes           3590  
+
+[183 rows x 5 columns]
+                                                Location                 Dim2  \
+0                                            Afghanistan  Malignant neoplasms   
+60                                               Albania  Malignant neoplasms   
+120                                              Algeria  Malignant neoplasms   
+180                                               Angola  Malignant neoplasms   
+240                                  Antigua and Barbuda  Malignant neoplasms   
+300                                            Argentina  Malignant neoplasms   
+360                                              Armenia  Malignant neoplasms   
+420                                            Australia  Malignant neoplasms   
+480                                              Austria  Malignant neoplasms   
+540                                           Azerbaijan  Malignant neoplasms   
+600                                              Bahamas  Malignant neoplasms   
+660                                              Bahrain  Malignant neoplasms   
+720                                           Bangladesh  Malignant neoplasms   
+780                                             Barbados  Malignant neoplasms   
+840                                              Belarus  Malignant neoplasms   
+900                                              Belgium  Malignant neoplasms   
+960                                               Belize  Malignant neoplasms   
+1020                                               Benin  Malignant neoplasms   
+1080                                              Bhutan  Malignant neoplasms   
+1140                    Bolivia (Plurinational State of)  Malignant neoplasms   
+1200                              Bosnia and Herzegovina  Malignant neoplasms   
+1260                                            Botswana  Malignant neoplasms   
+1320                                              Brazil  Malignant neoplasms   
+1380                                   Brunei Darussalam  Malignant neoplasms   
+1440                                            Bulgaria  Malignant neoplasms   
+1500                                        Burkina Faso  Malignant neoplasms   
+1560                                             Burundi  Malignant neoplasms   
+1620                                          Cabo Verde  Malignant neoplasms   
+1680                                            Cambodia  Malignant neoplasms   
+1740                                            Cameroon  Malignant neoplasms   
+                                                 ...                  ...   
+9180                                           Sri Lanka  Malignant neoplasms   
+9240                                               Sudan  Malignant neoplasms   
+9300                                            Suriname  Malignant neoplasms   
+9360                                              Sweden  Malignant neoplasms   
+9420                                         Switzerland  Malignant neoplasms   
+9480                                Syrian Arab Republic  Malignant neoplasms   
+9540                                          Tajikistan  Malignant neoplasms   
+9600                                            Thailand  Malignant neoplasms   
+9660           The former Yugoslav Republic of Macedonia  Malignant neoplasms   
+9720                                         Timor-Leste  Malignant neoplasms   
+9780                                                Togo  Malignant neoplasms   
+9840                                               Tonga  Malignant neoplasms   
+9900                                 Trinidad and Tobago  Malignant neoplasms   
+9960                                             Tunisia  Malignant neoplasms   
+10020                                             Turkey  Malignant neoplasms   
+10080                                       Turkmenistan  Malignant neoplasms   
+10140                                             Uganda  Malignant neoplasms   
+10200                                            Ukraine  Malignant neoplasms   
+10260                               United Arab Emirates  Malignant neoplasms   
+10320  United Kingdom of Great Britain and Northern I...  Malignant neoplasms   
+10380                        United Republic of Tanzania  Malignant neoplasms   
+10440                           United States of America  Malignant neoplasms   
+10500                                            Uruguay  Malignant neoplasms   
+10560                                         Uzbekistan  Malignant neoplasms   
+10620                                            Vanuatu  Malignant neoplasms   
+10680                 Venezuela (Bolivarian Republic of)  Malignant neoplasms   
+10740                                           Viet Nam  Malignant neoplasms   
+10800                                              Yemen  Malignant neoplasms   
+10860                                             Zambia  Malignant neoplasms   
+10920                                           Zimbabwe  Malignant neoplasms   
+
+       Period        Dim1  First Tooltip  
+0        2016  Both sexes          19965  
+60       2016  Both sexes           5138  
+120      2016  Both sexes          25166  
+180      2016  Both sexes           8455  
+240      2016  Both sexes            134  
+300      2016  Both sexes          65657  
+360      2016  Both sexes           7953  
+420      2016  Both sexes          45749  
+480      2016  Both sexes          20899  
+540      2016  Both sexes          10136  
+600      2016  Both sexes            532  
+660      2016  Both sexes            456  
+720      2016  Both sexes          99620  
+780      2016  Both sexes            732  
+840      2016  Both sexes          18808  
+900      2016  Both sexes          28807  
+960      2016  Both sexes            287  
+1020     2016  Both sexes           3918  
+1080     2016  Both sexes            458  
+1140     2016  Both sexes           7948  
+1200     2016  Both sexes           7262  
+1260     2016  Both sexes           1099  
+1320     2016  Both sexes         233851  
+1380     2016  Both sexes            402  
+1440     2016  Both sexes          19367  
+1500     2016  Both sexes           7307  
+1560     2016  Both sexes           6585  
+1620     2016  Both sexes            310  
+1680     2016  Both sexes          13067  
+1740     2016  Both sexes          11576  
+      ...         ...            ...  
+9180     2016  Both sexes          20406  
+9240     2016  Both sexes          17653  
+9300     2016  Both sexes            627  
+9360     2016  Both sexes          23324  
+9420     2016  Both sexes          18188  
+9480     2016  Both sexes          14195  
+9540     2016  Both sexes           4555  
+9600     2016  Both sexes          94760  
+9660     2016  Both sexes           3989  
+9720     2016  Both sexes            838  
+9780     2016  Both sexes           3336  
+9840     2016  Both sexes            122  
+9900     2016  Both sexes           1874  
+9960     2016  Both sexes           8323  
+10020    2016  Both sexes         102561  
+10080    2016  Both sexes           4528  
+10140    2016  Both sexes          25573  
+10200    2016  Both sexes          97076  
+10260    2016  Both sexes           1803  
+10320    2016  Both sexes         168188  
+10380    2016  Both sexes          27207  
+10440    2016  Both sexes         627709  
+10500    2016  Both sexes           8615  
+10560    2016  Both sexes          13846  
+10620    2016  Both sexes            200  
+10680    2016  Both sexes          28570  
+10740    2016  Both sexes         102283  
+10800    2016  Both sexes          10454  
+10860    2016  Both sexes           8024  
+10920    2016  Both sexes           8872  
+
+[183 rows x 5 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
