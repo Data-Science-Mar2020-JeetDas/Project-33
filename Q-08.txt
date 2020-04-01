@@ -1,0 +1,744 @@
+#------------- Question-08 : 2010 : For Male ---------------------
+
+df2010_male = df2010[df2010.Dim1 == 'Male']
+print("\n\n--------------[ OUTPUT for 2010 Male ]----------------------\n\n")
+print(df2010_male[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2010_male[df2010_male.Dim2 == 'Cardiovascular diseases']
+df2 = df2010_male[df2010_male.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2010_male[df2010_male.Dim2 == 'Diabetes mellitus']
+df4 = df2010_male[df2010_male.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 08 : 2010 : For Male')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2010 Male ]----------------------
+
+
+                                 Location  \
+25                            Afghanistan   
+28                            Afghanistan   
+31                            Afghanistan   
+34                            Afghanistan   
+85                                Albania   
+88                                Albania   
+91                                Albania   
+94                                Albania   
+145                               Algeria   
+148                               Algeria   
+151                               Algeria   
+154                               Algeria   
+205                                Angola   
+208                                Angola   
+211                                Angola   
+214                                Angola   
+265                   Antigua and Barbuda   
+268                   Antigua and Barbuda   
+271                   Antigua and Barbuda   
+274                   Antigua and Barbuda   
+325                             Argentina   
+328                             Argentina   
+331                             Argentina   
+334                             Argentina   
+385                               Armenia   
+388                               Armenia   
+391                               Armenia   
+394                               Armenia   
+445                             Australia   
+448                             Australia   
+                                  ...   
+10531                             Uruguay   
+10534                             Uruguay   
+10585                          Uzbekistan   
+10588                          Uzbekistan   
+10591                          Uzbekistan   
+10594                          Uzbekistan   
+10645                             Vanuatu   
+10648                             Vanuatu   
+10651                             Vanuatu   
+10654                             Vanuatu   
+10705  Venezuela (Bolivarian Republic of)   
+10708  Venezuela (Bolivarian Republic of)   
+10711  Venezuela (Bolivarian Republic of)   
+10714  Venezuela (Bolivarian Republic of)   
+10765                            Viet Nam   
+10768                            Viet Nam   
+10771                            Viet Nam   
+10774                            Viet Nam   
+10825                               Yemen   
+10828                               Yemen   
+10831                               Yemen   
+10834                               Yemen   
+10885                              Zambia   
+10888                              Zambia   
+10891                              Zambia   
+10894                              Zambia   
+10945                            Zimbabwe   
+10948                            Zimbabwe   
+10951                            Zimbabwe   
+10954                            Zimbabwe   
+
+                                        Dim2  Period  Dim1  First Tooltip  
+25                       Malignant neoplasms    2010  Male           8540  
+28                         Diabetes mellitus    2010  Male           1797  
+31                   Cardiovascular diseases    2010  Male          23248  
+34     Chronic obstructive pulmonary disease    2010  Male           3148  
+85                       Malignant neoplasms    2010  Male           2640  
+88                         Diabetes mellitus    2010  Male             74  
+91                   Cardiovascular diseases    2010  Male           6819  
+94     Chronic obstructive pulmonary disease    2010  Male            474  
+145                      Malignant neoplasms    2010  Male          10236  
+148                        Diabetes mellitus    2010  Male           3256  
+151                  Cardiovascular diseases    2010  Male          29003  
+154    Chronic obstructive pulmonary disease    2010  Male           2970  
+205                      Malignant neoplasms    2010  Male           3127  
+208                        Diabetes mellitus    2010  Male           1089  
+211                  Cardiovascular diseases    2010  Male           8820  
+214    Chronic obstructive pulmonary disease    2010  Male           1485  
+265                      Malignant neoplasms    2010  Male             53  
+268                        Diabetes mellitus    2010  Male             20  
+271                  Cardiovascular diseases    2010  Male             88  
+274    Chronic obstructive pulmonary disease    2010  Male             10  
+325                      Malignant neoplasms    2010  Male          33931  
+328                        Diabetes mellitus    2010  Male           4395  
+331                  Cardiovascular diseases    2010  Male          48316  
+334    Chronic obstructive pulmonary disease    2010  Male          19248  
+385                      Malignant neoplasms    2010  Male           4436  
+388                        Diabetes mellitus    2010  Male            460  
+391                  Cardiovascular diseases    2010  Male           5899  
+394    Chronic obstructive pulmonary disease    2010  Male            648  
+445                      Malignant neoplasms    2010  Male          24132  
+448                        Diabetes mellitus    2010  Male           1997  
+                                     ...     ...   ...            ...  
+10531                Cardiovascular diseases    2010  Male           4638  
+10534  Chronic obstructive pulmonary disease    2010  Male           1625  
+10585                    Malignant neoplasms    2010  Male           5627  
+10588                      Diabetes mellitus    2010  Male           2031  
+10591                Cardiovascular diseases    2010  Male          45444  
+10594  Chronic obstructive pulmonary disease    2010  Male           1651  
+10645                    Malignant neoplasms    2010  Male             89  
+10648                      Diabetes mellitus    2010  Male             30  
+10651                Cardiovascular diseases    2010  Male            210  
+10654  Chronic obstructive pulmonary disease    2010  Male             52  
+10705                    Malignant neoplasms    2010  Male          12465  
+10708                      Diabetes mellitus    2010  Male           5346  
+10711                Cardiovascular diseases    2010  Male          26033  
+10714  Chronic obstructive pulmonary disease    2010  Male           2994  
+10765                    Malignant neoplasms    2010  Male          47838  
+10768                      Diabetes mellitus    2010  Male           5976  
+10771                Cardiovascular diseases    2010  Male          85223  
+10774  Chronic obstructive pulmonary disease    2010  Male          16747  
+10825                    Malignant neoplasms    2010  Male           4252  
+10828                      Diabetes mellitus    2010  Male           1289  
+10831                Cardiovascular diseases    2010  Male          25220  
+10834  Chronic obstructive pulmonary disease    2010  Male           3152  
+10885                    Malignant neoplasms    2010  Male           2985  
+10888                      Diabetes mellitus    2010  Male            684  
+10891                Cardiovascular diseases    2010  Male           4998  
+10894  Chronic obstructive pulmonary disease    2010  Male            901  
+10945                    Malignant neoplasms    2010  Male           3663  
+10948                      Diabetes mellitus    2010  Male           1314  
+10951                Cardiovascular diseases    2010  Male           5601  
+10954  Chronic obstructive pulmonary disease    2010  Male           1452  
+
+[732 rows x 5 columns]
+                                                Location  \
+31                                           Afghanistan   
+91                                               Albania   
+151                                              Algeria   
+211                                               Angola   
+271                                  Antigua and Barbuda   
+331                                            Argentina   
+391                                              Armenia   
+451                                            Australia   
+511                                              Austria   
+571                                           Azerbaijan   
+631                                              Bahamas   
+691                                              Bahrain   
+751                                           Bangladesh   
+811                                             Barbados   
+871                                              Belarus   
+931                                              Belgium   
+991                                               Belize   
+1051                                               Benin   
+1111                                              Bhutan   
+1171                    Bolivia (Plurinational State of)   
+1231                              Bosnia and Herzegovina   
+1291                                            Botswana   
+1351                                              Brazil   
+1411                                   Brunei Darussalam   
+1471                                            Bulgaria   
+1531                                        Burkina Faso   
+1591                                             Burundi   
+1651                                          Cabo Verde   
+1711                                            Cambodia   
+1771                                            Cameroon   
+                                                 ...   
+9211                                           Sri Lanka   
+9271                                  Sudan (until 2011)   
+9331                                            Suriname   
+9391                                              Sweden   
+9451                                         Switzerland   
+9511                                Syrian Arab Republic   
+9571                                          Tajikistan   
+9631                                            Thailand   
+9691           The former Yugoslav Republic of Macedonia   
+9751                                         Timor-Leste   
+9811                                                Togo   
+9871                                               Tonga   
+9931                                 Trinidad and Tobago   
+9991                                             Tunisia   
+10051                                             Turkey   
+10111                                       Turkmenistan   
+10171                                             Uganda   
+10231                                            Ukraine   
+10291                               United Arab Emirates   
+10351  United Kingdom of Great Britain and Northern I...   
+10411                        United Republic of Tanzania   
+10471                           United States of America   
+10531                                            Uruguay   
+10591                                         Uzbekistan   
+10651                                            Vanuatu   
+10711                 Venezuela (Bolivarian Republic of)   
+10771                                           Viet Nam   
+10831                                              Yemen   
+10891                                             Zambia   
+10951                                           Zimbabwe   
+
+                          Dim2  Period  Dim1  First Tooltip  
+31     Cardiovascular diseases    2010  Male          23248  
+91     Cardiovascular diseases    2010  Male           6819  
+151    Cardiovascular diseases    2010  Male          29003  
+211    Cardiovascular diseases    2010  Male           8820  
+271    Cardiovascular diseases    2010  Male             88  
+331    Cardiovascular diseases    2010  Male          48316  
+391    Cardiovascular diseases    2010  Male           5899  
+451    Cardiovascular diseases    2010  Male          21284  
+511    Cardiovascular diseases    2010  Male          13656  
+571    Cardiovascular diseases    2010  Male          15026  
+631    Cardiovascular diseases    2010  Male            316  
+691    Cardiovascular diseases    2010  Male            427  
+751    Cardiovascular diseases    2010  Male         115080  
+811    Cardiovascular diseases    2010  Male            416  
+871    Cardiovascular diseases    2010  Male          40692  
+931    Cardiovascular diseases    2010  Male          14519  
+991    Cardiovascular diseases    2010  Male            259  
+1051   Cardiovascular diseases    2010  Male           5026  
+1111   Cardiovascular diseases    2010  Male            598  
+1171   Cardiovascular diseases    2010  Male           8053  
+1231   Cardiovascular diseases    2010  Male           9318  
+1291   Cardiovascular diseases    2010  Male           1098  
+1351   Cardiovascular diseases    2010  Male         189564  
+1411   Cardiovascular diseases    2010  Male            195  
+1471   Cardiovascular diseases    2010  Male          35527  
+1531   Cardiovascular diseases    2010  Male           7560  
+1591   Cardiovascular diseases    2010  Male           4457  
+1651   Cardiovascular diseases    2010  Male            470  
+1711   Cardiovascular diseases    2010  Male           8438  
+1771   Cardiovascular diseases    2010  Male          12048  
+                       ...     ...   ...            ...  
+9211   Cardiovascular diseases    2010  Male          23697  
+9271   Cardiovascular diseases    2010  Male          34098  
+9331   Cardiovascular diseases    2010  Male            654  
+9391   Cardiovascular diseases    2010  Male          17187  
+9451   Cardiovascular diseases    2010  Male           9867  
+9511   Cardiovascular diseases    2010  Male          19520  
+9571   Cardiovascular diseases    2010  Male           8237  
+9631   Cardiovascular diseases    2010  Male          59663  
+9691   Cardiovascular diseases    2010  Male           5788  
+9751   Cardiovascular diseases    2010  Male            609  
+9811   Cardiovascular diseases    2010  Male           4401  
+9871   Cardiovascular diseases    2010  Male             88  
+9931   Cardiovascular diseases    2010  Male           1888  
+9991   Cardiovascular diseases    2010  Male          16390  
+10051  Cardiovascular diseases    2010  Male          75125  
+10111  Cardiovascular diseases    2010  Male           8056  
+10171  Cardiovascular diseases    2010  Male          11711  
+10231  Cardiovascular diseases    2010  Male         197682  
+10291  Cardiovascular diseases    2010  Male           3512  
+10351  Cardiovascular diseases    2010  Male          87171  
+10411  Cardiovascular diseases    2010  Male          20660  
+10471  Cardiovascular diseases    2010  Male         376857  
+10531  Cardiovascular diseases    2010  Male           4638  
+10591  Cardiovascular diseases    2010  Male          45444  
+10651  Cardiovascular diseases    2010  Male            210  
+10711  Cardiovascular diseases    2010  Male          26033  
+10771  Cardiovascular diseases    2010  Male          85223  
+10831  Cardiovascular diseases    2010  Male          25220  
+10891  Cardiovascular diseases    2010  Male           4998  
+10951  Cardiovascular diseases    2010  Male           5601  
+
+[183 rows x 5 columns]
+                                                Location  \
+34                                           Afghanistan   
+94                                               Albania   
+154                                              Algeria   
+214                                               Angola   
+274                                  Antigua and Barbuda   
+334                                            Argentina   
+394                                              Armenia   
+454                                            Australia   
+514                                              Austria   
+574                                           Azerbaijan   
+634                                              Bahamas   
+694                                              Bahrain   
+754                                           Bangladesh   
+814                                             Barbados   
+874                                              Belarus   
+934                                              Belgium   
+994                                               Belize   
+1054                                               Benin   
+1114                                              Bhutan   
+1174                    Bolivia (Plurinational State of)   
+1234                              Bosnia and Herzegovina   
+1294                                            Botswana   
+1354                                              Brazil   
+1414                                   Brunei Darussalam   
+1474                                            Bulgaria   
+1534                                        Burkina Faso   
+1594                                             Burundi   
+1654                                          Cabo Verde   
+1714                                            Cambodia   
+1774                                            Cameroon   
+                                                 ...   
+9214                                           Sri Lanka   
+9274                                  Sudan (until 2011)   
+9334                                            Suriname   
+9394                                              Sweden   
+9454                                         Switzerland   
+9514                                Syrian Arab Republic   
+9574                                          Tajikistan   
+9634                                            Thailand   
+9694           The former Yugoslav Republic of Macedonia   
+9754                                         Timor-Leste   
+9814                                                Togo   
+9874                                               Tonga   
+9934                                 Trinidad and Tobago   
+9994                                             Tunisia   
+10054                                             Turkey   
+10114                                       Turkmenistan   
+10174                                             Uganda   
+10234                                            Ukraine   
+10294                               United Arab Emirates   
+10354  United Kingdom of Great Britain and Northern I...   
+10414                        United Republic of Tanzania   
+10474                           United States of America   
+10534                                            Uruguay   
+10594                                         Uzbekistan   
+10654                                            Vanuatu   
+10714                 Venezuela (Bolivarian Republic of)   
+10774                                           Viet Nam   
+10834                                              Yemen   
+10894                                             Zambia   
+10954                                           Zimbabwe   
+
+                                        Dim2  Period  Dim1  First Tooltip  
+34     Chronic obstructive pulmonary disease    2010  Male           3148  
+94     Chronic obstructive pulmonary disease    2010  Male            474  
+154    Chronic obstructive pulmonary disease    2010  Male           2970  
+214    Chronic obstructive pulmonary disease    2010  Male           1485  
+274    Chronic obstructive pulmonary disease    2010  Male             10  
+334    Chronic obstructive pulmonary disease    2010  Male          19248  
+394    Chronic obstructive pulmonary disease    2010  Male            648  
+454    Chronic obstructive pulmonary disease    2010  Male           5490  
+514    Chronic obstructive pulmonary disease    2010  Male           2032  
+574    Chronic obstructive pulmonary disease    2010  Male            988  
+634    Chronic obstructive pulmonary disease    2010  Male             23  
+694    Chronic obstructive pulmonary disease    2010  Male             56  
+754    Chronic obstructive pulmonary disease    2010  Male          37584  
+814    Chronic obstructive pulmonary disease    2010  Male             63  
+874    Chronic obstructive pulmonary disease    2010  Male           2281  
+934    Chronic obstructive pulmonary disease    2010  Male           5032  
+994    Chronic obstructive pulmonary disease    2010  Male             44  
+1054   Chronic obstructive pulmonary disease    2010  Male            994  
+1114   Chronic obstructive pulmonary disease    2010  Male            202  
+1174   Chronic obstructive pulmonary disease    2010  Male           1608  
+1234   Chronic obstructive pulmonary disease    2010  Male            879  
+1294   Chronic obstructive pulmonary disease    2010  Male            341  
+1354   Chronic obstructive pulmonary disease    2010  Male          43529  
+1414   Chronic obstructive pulmonary disease    2010  Male             43  
+1474   Chronic obstructive pulmonary disease    2010  Male           3270  
+1534   Chronic obstructive pulmonary disease    2010  Male            971  
+1594   Chronic obstructive pulmonary disease    2010  Male            872  
+1654   Chronic obstructive pulmonary disease    2010  Male             56  
+1714   Chronic obstructive pulmonary disease    2010  Male           1922  
+1774   Chronic obstructive pulmonary disease    2010  Male           2519  
+                                     ...     ...   ...            ...  
+9214   Chronic obstructive pulmonary disease    2010  Male           5792  
+9274   Chronic obstructive pulmonary disease    2010  Male           4046  
+9334   Chronic obstructive pulmonary disease    2010  Male             57  
+9394   Chronic obstructive pulmonary disease    2010  Male           2345  
+9454   Chronic obstructive pulmonary disease    2010  Male           1835  
+9514   Chronic obstructive pulmonary disease    2010  Male           1508  
+9574   Chronic obstructive pulmonary disease    2010  Male            807  
+9634   Chronic obstructive pulmonary disease    2010  Male          18507  
+9694   Chronic obstructive pulmonary disease    2010  Male            457  
+9754   Chronic obstructive pulmonary disease    2010  Male            135  
+9814   Chronic obstructive pulmonary disease    2010  Male            729  
+9874   Chronic obstructive pulmonary disease    2010  Male             27  
+9934   Chronic obstructive pulmonary disease    2010  Male            218  
+9994   Chronic obstructive pulmonary disease    2010  Male           1684  
+10054  Chronic obstructive pulmonary disease    2010  Male          18338  
+10114  Chronic obstructive pulmonary disease    2010  Male            247  
+10174  Chronic obstructive pulmonary disease    2010  Male           2331  
+10234  Chronic obstructive pulmonary disease    2010  Male          11002  
+10294  Chronic obstructive pulmonary disease    2010  Male            573  
+10354  Chronic obstructive pulmonary disease    2010  Male          23636  
+10414  Chronic obstructive pulmonary disease    2010  Male           2942  
+10474  Chronic obstructive pulmonary disease    2010  Male         101126  
+10534  Chronic obstructive pulmonary disease    2010  Male           1625  
+10594  Chronic obstructive pulmonary disease    2010  Male           1651  
+10654  Chronic obstructive pulmonary disease    2010  Male             52  
+10714  Chronic obstructive pulmonary disease    2010  Male           2994  
+10774  Chronic obstructive pulmonary disease    2010  Male          16747  
+10834  Chronic obstructive pulmonary disease    2010  Male           3152  
+10894  Chronic obstructive pulmonary disease    2010  Male            901  
+10954  Chronic obstructive pulmonary disease    2010  Male           1452  
+
+[183 rows x 5 columns]
+                                                Location               Dim2  \
+28                                           Afghanistan  Diabetes mellitus   
+88                                               Albania  Diabetes mellitus   
+148                                              Algeria  Diabetes mellitus   
+208                                               Angola  Diabetes mellitus   
+268                                  Antigua and Barbuda  Diabetes mellitus   
+328                                            Argentina  Diabetes mellitus   
+388                                              Armenia  Diabetes mellitus   
+448                                            Australia  Diabetes mellitus   
+508                                              Austria  Diabetes mellitus   
+568                                           Azerbaijan  Diabetes mellitus   
+628                                              Bahamas  Diabetes mellitus   
+688                                              Bahrain  Diabetes mellitus   
+748                                           Bangladesh  Diabetes mellitus   
+808                                             Barbados  Diabetes mellitus   
+868                                              Belarus  Diabetes mellitus   
+928                                              Belgium  Diabetes mellitus   
+988                                               Belize  Diabetes mellitus   
+1048                                               Benin  Diabetes mellitus   
+1108                                              Bhutan  Diabetes mellitus   
+1168                    Bolivia (Plurinational State of)  Diabetes mellitus   
+1228                              Bosnia and Herzegovina  Diabetes mellitus   
+1288                                            Botswana  Diabetes mellitus   
+1348                                              Brazil  Diabetes mellitus   
+1408                                   Brunei Darussalam  Diabetes mellitus   
+1468                                            Bulgaria  Diabetes mellitus   
+1528                                        Burkina Faso  Diabetes mellitus   
+1588                                             Burundi  Diabetes mellitus   
+1648                                          Cabo Verde  Diabetes mellitus   
+1708                                            Cambodia  Diabetes mellitus   
+1768                                            Cameroon  Diabetes mellitus   
+                                                 ...                ...   
+9208                                           Sri Lanka  Diabetes mellitus   
+9268                                  Sudan (until 2011)  Diabetes mellitus   
+9328                                            Suriname  Diabetes mellitus   
+9388                                              Sweden  Diabetes mellitus   
+9448                                         Switzerland  Diabetes mellitus   
+9508                                Syrian Arab Republic  Diabetes mellitus   
+9568                                          Tajikistan  Diabetes mellitus   
+9628                                            Thailand  Diabetes mellitus   
+9688           The former Yugoslav Republic of Macedonia  Diabetes mellitus   
+9748                                         Timor-Leste  Diabetes mellitus   
+9808                                                Togo  Diabetes mellitus   
+9868                                               Tonga  Diabetes mellitus   
+9928                                 Trinidad and Tobago  Diabetes mellitus   
+9988                                             Tunisia  Diabetes mellitus   
+10048                                             Turkey  Diabetes mellitus   
+10108                                       Turkmenistan  Diabetes mellitus   
+10168                                             Uganda  Diabetes mellitus   
+10228                                            Ukraine  Diabetes mellitus   
+10288                               United Arab Emirates  Diabetes mellitus   
+10348  United Kingdom of Great Britain and Northern I...  Diabetes mellitus   
+10408                        United Republic of Tanzania  Diabetes mellitus   
+10468                           United States of America  Diabetes mellitus   
+10528                                            Uruguay  Diabetes mellitus   
+10588                                         Uzbekistan  Diabetes mellitus   
+10648                                            Vanuatu  Diabetes mellitus   
+10708                 Venezuela (Bolivarian Republic of)  Diabetes mellitus   
+10768                                           Viet Nam  Diabetes mellitus   
+10828                                              Yemen  Diabetes mellitus   
+10888                                             Zambia  Diabetes mellitus   
+10948                                           Zimbabwe  Diabetes mellitus   
+
+       Period  Dim1  First Tooltip  
+28       2010  Male           1797  
+88       2010  Male             74  
+148      2010  Male           3256  
+208      2010  Male           1089  
+268      2010  Male             20  
+328      2010  Male           4395  
+388      2010  Male            460  
+448      2010  Male           1997  
+508      2010  Male           1348  
+568      2010  Male            557  
+628      2010  Male             44  
+688      2010  Male            204  
+748      2010  Male           9931  
+808      2010  Male            105  
+868      2010  Male            198  
+928      2010  Male            706  
+988      2010  Male             65  
+1048     2010  Male            487  
+1108     2010  Male             59  
+1168     2010  Male           1070  
+1228     2010  Male           1004  
+1288     2010  Male            322  
+1348     2010  Male          27542  
+1408     2010  Male             59  
+1468     2010  Male            798  
+1528     2010  Male            856  
+1588     2010  Male            599  
+1648     2010  Male             37  
+1708     2010  Male            677  
+1768     2010  Male           1637  
+      ...   ...            ...  
+9208     2010  Male           5304  
+9268     2010  Male           2038  
+9328     2010  Male            106  
+9388     2010  Male           1045  
+9448     2010  Male            585  
+9508     2010  Male            503  
+9568     2010  Male            326  
+9628     2010  Male           8249  
+9688     2010  Male            329  
+9748     2010  Male             34  
+9808     2010  Male            340  
+9868     2010  Male             34  
+9928     2010  Male            817  
+9988     2010  Male           1465  
+10048    2010  Male           8344  
+10108    2010  Male            227  
+10168    2010  Male           2130  
+10228    2010  Male           1193  
+10288    2010  Male            367  
+10348    2010  Male           2929  
+10408    2010  Male           2817  
+10468    2010  Male          35949  
+10528    2010  Male            385  
+10588    2010  Male           2031  
+10648    2010  Male             30  
+10708    2010  Male           5346  
+10768    2010  Male           5976  
+10828    2010  Male           1289  
+10888    2010  Male            684  
+10948    2010  Male           1314  
+
+[183 rows x 5 columns]
+                                                Location                 Dim2  \
+25                                           Afghanistan  Malignant neoplasms   
+85                                               Albania  Malignant neoplasms   
+145                                              Algeria  Malignant neoplasms   
+205                                               Angola  Malignant neoplasms   
+265                                  Antigua and Barbuda  Malignant neoplasms   
+325                                            Argentina  Malignant neoplasms   
+385                                              Armenia  Malignant neoplasms   
+445                                            Australia  Malignant neoplasms   
+505                                              Austria  Malignant neoplasms   
+565                                           Azerbaijan  Malignant neoplasms   
+625                                              Bahamas  Malignant neoplasms   
+685                                              Bahrain  Malignant neoplasms   
+745                                           Bangladesh  Malignant neoplasms   
+805                                             Barbados  Malignant neoplasms   
+865                                              Belarus  Malignant neoplasms   
+925                                              Belgium  Malignant neoplasms   
+985                                               Belize  Malignant neoplasms   
+1045                                               Benin  Malignant neoplasms   
+1105                                              Bhutan  Malignant neoplasms   
+1165                    Bolivia (Plurinational State of)  Malignant neoplasms   
+1225                              Bosnia and Herzegovina  Malignant neoplasms   
+1285                                            Botswana  Malignant neoplasms   
+1345                                              Brazil  Malignant neoplasms   
+1405                                   Brunei Darussalam  Malignant neoplasms   
+1465                                            Bulgaria  Malignant neoplasms   
+1525                                        Burkina Faso  Malignant neoplasms   
+1585                                             Burundi  Malignant neoplasms   
+1645                                          Cabo Verde  Malignant neoplasms   
+1705                                            Cambodia  Malignant neoplasms   
+1765                                            Cameroon  Malignant neoplasms   
+                                                 ...                  ...   
+9205                                           Sri Lanka  Malignant neoplasms   
+9265                                  Sudan (until 2011)  Malignant neoplasms   
+9325                                            Suriname  Malignant neoplasms   
+9385                                              Sweden  Malignant neoplasms   
+9445                                         Switzerland  Malignant neoplasms   
+9505                                Syrian Arab Republic  Malignant neoplasms   
+9565                                          Tajikistan  Malignant neoplasms   
+9625                                            Thailand  Malignant neoplasms   
+9685           The former Yugoslav Republic of Macedonia  Malignant neoplasms   
+9745                                         Timor-Leste  Malignant neoplasms   
+9805                                                Togo  Malignant neoplasms   
+9865                                               Tonga  Malignant neoplasms   
+9925                                 Trinidad and Tobago  Malignant neoplasms   
+9985                                             Tunisia  Malignant neoplasms   
+10045                                             Turkey  Malignant neoplasms   
+10105                                       Turkmenistan  Malignant neoplasms   
+10165                                             Uganda  Malignant neoplasms   
+10225                                            Ukraine  Malignant neoplasms   
+10285                               United Arab Emirates  Malignant neoplasms   
+10345  United Kingdom of Great Britain and Northern I...  Malignant neoplasms   
+10405                        United Republic of Tanzania  Malignant neoplasms   
+10465                           United States of America  Malignant neoplasms   
+10525                                            Uruguay  Malignant neoplasms   
+10585                                         Uzbekistan  Malignant neoplasms   
+10645                                            Vanuatu  Malignant neoplasms   
+10705                 Venezuela (Bolivarian Republic of)  Malignant neoplasms   
+10765                                           Viet Nam  Malignant neoplasms   
+10825                                              Yemen  Malignant neoplasms   
+10885                                             Zambia  Malignant neoplasms   
+10945                                           Zimbabwe  Malignant neoplasms   
+
+       Period  Dim1  First Tooltip  
+25       2010  Male           8540  
+85       2010  Male           2640  
+145      2010  Male          10236  
+205      2010  Male           3127  
+265      2010  Male             53  
+325      2010  Male          33931  
+385      2010  Male           4436  
+445      2010  Male          24132  
+505      2010  Male          10790  
+565      2010  Male           4999  
+625      2010  Male            207  
+685      2010  Male            197  
+745      2010  Male          47120  
+805      2010  Male            379  
+865      2010  Male          11525  
+925      2010  Male          16127  
+985      2010  Male            143  
+1045     2010  Male           1351  
+1105     2010  Male            211  
+1165     2010  Male           2861  
+1225     2010  Male           3891  
+1285     2010  Male            486  
+1345     2010  Male         109549  
+1405     2010  Male            155  
+1465     2010  Male          10004  
+1525     2010  Male           2307  
+1585     2010  Male           2327  
+1645     2010  Male            132  
+1705     2010  Male           5416  
+1765     2010  Male           4555  
+      ...   ...            ...  
+9205     2010  Male           9131  
+9265     2010  Male           7368  
+9325     2010  Male            285  
+9385     2010  Male          11812  
+9445     2010  Male           9403  
+9505     2010  Male           7519  
+9565     2010  Male           2173  
+9625     2010  Male          46724  
+9685     2010  Male           2377  
+9745     2010  Male            413  
+9805     2010  Male           1157  
+9865     2010  Male             63  
+9925     2010  Male            931  
+9985     2010  Male           4367  
+10045    2010  Male          58061  
+10105    2010  Male           2228  
+10165    2010  Male          10820  
+10225    2010  Male          53309  
+10285    2010  Male            643  
+10345    2010  Male          83319  
+10405    2010  Male          10293  
+10465    2010  Male         304368  
+10525    2010  Male           4610  
+10585    2010  Male           5627  
+10645    2010  Male             89  
+10705    2010  Male          12465  
+10765    2010  Male          47838  
+10825    2010  Male           4252  
+10885    2010  Male           2985  
+10945    2010  Male           3663  
+
+[183 rows x 5 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
