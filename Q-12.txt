@@ -1,0 +1,744 @@
+
+#------------- Question-12 : 2005 : For female---------------------
+
+df2005_female = df2005[df2005.Dim1 == 'Female']
+print("\n\n--------------[ OUTPUT for 2005 Female ]----------------------\n\n")
+print(df2005_female[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+df1 = df2005_female[df2005_female.Dim2 == 'Cardiovascular diseases']
+df2 = df2005_female[df2005_female.Dim2 == 'Chronic obstructive pulmonary disease']
+df3 = df2005_female[df2005_female.Dim2 == 'Diabetes mellitus']
+df4 = df2005_female[df2005_female.Dim2 == 'Malignant neoplasms']
+
+print(df1[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df2[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df3[['Location','Dim2','Period','Dim1','First Tooltip']])
+print(df4[['Location','Dim2','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df1))
+print(i)
+
+i1 = np.arange(len(df2))
+print(i1)
+
+i2 = np.arange(len(df3))
+print(i2)
+
+i3 = np.arange(len(df4))
+print(i3)
+
+plt.title('Question - 12 : 2005 : For Female')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Probability(%) --- >")
+
+plt.plot(i,df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Cardiovascular diseases")
+
+plt.plot(i1,df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Chronic obstructive pulmonary disease")
+
+plt.plot(i2,df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Diabetes mellitus")
+
+plt.plot(i3,df4['First Tooltip'],
+            marker='o',
+            markersize=10,
+            linestyle='dashed',
+            label="[4] Malignant neoplasms")            
+
+plt.legend()
+plt.show()
+
+
+--------------[ OUTPUT for 2005 Female ]----------------------
+
+
+                                 Location  \
+38                            Afghanistan   
+41                            Afghanistan   
+44                            Afghanistan   
+47                            Afghanistan   
+98                                Albania   
+101                               Albania   
+104                               Albania   
+107                               Albania   
+158                               Algeria   
+161                               Algeria   
+164                               Algeria   
+167                               Algeria   
+218                                Angola   
+221                                Angola   
+224                                Angola   
+227                                Angola   
+278                   Antigua and Barbuda   
+281                   Antigua and Barbuda   
+284                   Antigua and Barbuda   
+287                   Antigua and Barbuda   
+338                             Argentina   
+341                             Argentina   
+344                             Argentina   
+347                             Argentina   
+398                               Armenia   
+401                               Armenia   
+404                               Armenia   
+407                               Armenia   
+458                             Australia   
+461                             Australia   
+                                  ...   
+10544                             Uruguay   
+10547                             Uruguay   
+10598                          Uzbekistan   
+10601                          Uzbekistan   
+10604                          Uzbekistan   
+10607                          Uzbekistan   
+10658                             Vanuatu   
+10661                             Vanuatu   
+10664                             Vanuatu   
+10667                             Vanuatu   
+10718  Venezuela (Bolivarian Republic of)   
+10721  Venezuela (Bolivarian Republic of)   
+10724  Venezuela (Bolivarian Republic of)   
+10727  Venezuela (Bolivarian Republic of)   
+10778                            Viet Nam   
+10781                            Viet Nam   
+10784                            Viet Nam   
+10787                            Viet Nam   
+10838                               Yemen   
+10841                               Yemen   
+10844                               Yemen   
+10847                               Yemen   
+10898                              Zambia   
+10901                              Zambia   
+10904                              Zambia   
+10907                              Zambia   
+10958                            Zimbabwe   
+10961                            Zimbabwe   
+10964                            Zimbabwe   
+10967                            Zimbabwe   
+
+                                        Dim2  Period    Dim1  First Tooltip  
+38                       Malignant neoplasms    2005  Female           6899  
+41                         Diabetes mellitus    2005  Female           2560  
+44                   Cardiovascular diseases    2005  Female          18936  
+47     Chronic obstructive pulmonary disease    2005  Female           2362  
+98                       Malignant neoplasms    2005  Female           1962  
+101                        Diabetes mellitus    2005  Female             82  
+104                  Cardiovascular diseases    2005  Female           6184  
+107    Chronic obstructive pulmonary disease    2005  Female            314  
+158                      Malignant neoplasms    2005  Female           8776  
+161                        Diabetes mellitus    2005  Female           2716  
+164                  Cardiovascular diseases    2005  Female          27384  
+167    Chronic obstructive pulmonary disease    2005  Female           2095  
+218                      Malignant neoplasms    2005  Female           3483  
+221                        Diabetes mellitus    2005  Female            728  
+224                  Cardiovascular diseases    2005  Female          11310  
+227    Chronic obstructive pulmonary disease    2005  Female           2051  
+278                      Malignant neoplasms    2005  Female             46  
+281                        Diabetes mellitus    2005  Female             43  
+284                  Cardiovascular diseases    2005  Female            115  
+287    Chronic obstructive pulmonary disease    2005  Female              9  
+338                      Malignant neoplasms    2005  Female          28519  
+341                        Diabetes mellitus    2005  Female           4907  
+344                  Cardiovascular diseases    2005  Female          44987  
+347    Chronic obstructive pulmonary disease    2005  Female          16796  
+398                      Malignant neoplasms    2005  Female           3201  
+401                        Diabetes mellitus    2005  Female            793  
+404                  Cardiovascular diseases    2005  Female           6471  
+407    Chronic obstructive pulmonary disease    2005  Female            465  
+458                      Malignant neoplasms    2005  Female          16987  
+461                        Diabetes mellitus    2005  Female           1736  
+                                     ...     ...     ...            ...  
+10544                Cardiovascular diseases    2005  Female           5654  
+10547  Chronic obstructive pulmonary disease    2005  Female           1000  
+10598                    Malignant neoplasms    2005  Female           5452  
+10601                      Diabetes mellitus    2005  Female           1987  
+10604                Cardiovascular diseases    2005  Female          42904  
+10607  Chronic obstructive pulmonary disease    2005  Female           2021  
+10658                    Malignant neoplasms    2005  Female             60  
+10661                      Diabetes mellitus    2005  Female             23  
+10664                Cardiovascular diseases    2005  Female            139  
+10667  Chronic obstructive pulmonary disease    2005  Female             21  
+10718                    Malignant neoplasms    2005  Female          10332  
+10721                      Diabetes mellitus    2005  Female           4241  
+10724                Cardiovascular diseases    2005  Female          17171  
+10727  Chronic obstructive pulmonary disease    2005  Female           2442  
+10778                    Malignant neoplasms    2005  Female          35811  
+10781                      Diabetes mellitus    2005  Female           9125  
+10784                Cardiovascular diseases    2005  Female          63462  
+10787  Chronic obstructive pulmonary disease    2005  Female          10029  
+10838                    Malignant neoplasms    2005  Female           3676  
+10841                      Diabetes mellitus    2005  Female           1379  
+10844                Cardiovascular diseases    2005  Female          22106  
+10847  Chronic obstructive pulmonary disease    2005  Female           2322  
+10898                    Malignant neoplasms    2005  Female           3816  
+10901                      Diabetes mellitus    2005  Female            520  
+10904                Cardiovascular diseases    2005  Female           6031  
+10907  Chronic obstructive pulmonary disease    2005  Female            851  
+10958                    Malignant neoplasms    2005  Female           4020  
+10961                      Diabetes mellitus    2005  Female           1646  
+10964                Cardiovascular diseases    2005  Female           8529  
+10967  Chronic obstructive pulmonary disease    2005  Female           1495  
+
+[732 rows x 5 columns]
+                                                Location  \
+44                                           Afghanistan   
+104                                              Albania   
+164                                              Algeria   
+224                                               Angola   
+284                                  Antigua and Barbuda   
+344                                            Argentina   
+404                                              Armenia   
+464                                            Australia   
+524                                              Austria   
+584                                           Azerbaijan   
+644                                              Bahamas   
+704                                              Bahrain   
+764                                           Bangladesh   
+824                                             Barbados   
+884                                              Belarus   
+944                                              Belgium   
+1004                                              Belize   
+1064                                               Benin   
+1124                                              Bhutan   
+1184                    Bolivia (Plurinational State of)   
+1244                              Bosnia and Herzegovina   
+1304                                            Botswana   
+1364                                              Brazil   
+1424                                   Brunei Darussalam   
+1484                                            Bulgaria   
+1544                                        Burkina Faso   
+1604                                             Burundi   
+1664                                          Cabo Verde   
+1724                                            Cambodia   
+1784                                            Cameroon   
+                                                 ...   
+9224                                           Sri Lanka   
+9284                                  Sudan (until 2011)   
+9344                                            Suriname   
+9404                                              Sweden   
+9464                                         Switzerland   
+9524                                Syrian Arab Republic   
+9584                                          Tajikistan   
+9644                                            Thailand   
+9704           The former Yugoslav Republic of Macedonia   
+9764                                         Timor-Leste   
+9824                                                Togo   
+9884                                               Tonga   
+9944                                 Trinidad and Tobago   
+10004                                            Tunisia   
+10064                                             Turkey   
+10124                                       Turkmenistan   
+10184                                             Uganda   
+10244                                            Ukraine   
+10304                               United Arab Emirates   
+10364  United Kingdom of Great Britain and Northern I...   
+10424                        United Republic of Tanzania   
+10484                           United States of America   
+10544                                            Uruguay   
+10604                                         Uzbekistan   
+10664                                            Vanuatu   
+10724                 Venezuela (Bolivarian Republic of)   
+10784                                           Viet Nam   
+10844                                              Yemen   
+10904                                             Zambia   
+10964                                           Zimbabwe   
+
+                          Dim2  Period    Dim1  First Tooltip  
+44     Cardiovascular diseases    2005  Female          18936  
+104    Cardiovascular diseases    2005  Female           6184  
+164    Cardiovascular diseases    2005  Female          27384  
+224    Cardiovascular diseases    2005  Female          11310  
+284    Cardiovascular diseases    2005  Female            115  
+344    Cardiovascular diseases    2005  Female          44987  
+404    Cardiovascular diseases    2005  Female           6471  
+464    Cardiovascular diseases    2005  Female          24538  
+524    Cardiovascular diseases    2005  Female          19215  
+584    Cardiovascular diseases    2005  Female          15899  
+644    Cardiovascular diseases    2005  Female            285  
+704    Cardiovascular diseases    2005  Female            305  
+764    Cardiovascular diseases    2005  Female         106015  
+824    Cardiovascular diseases    2005  Female            469  
+884    Cardiovascular diseases    2005  Female          50710  
+944    Cardiovascular diseases    2005  Female          18625  
+1004   Cardiovascular diseases    2005  Female            175  
+1064   Cardiovascular diseases    2005  Female           5613  
+1124   Cardiovascular diseases    2005  Female            492  
+1184   Cardiovascular diseases    2005  Female           7545  
+1244   Cardiovascular diseases    2005  Female          10313  
+1304   Cardiovascular diseases    2005  Female           1288  
+1364   Cardiovascular diseases    2005  Female         154957  
+1424   Cardiovascular diseases    2005  Female            134  
+1484   Cardiovascular diseases    2005  Female          37356  
+1544   Cardiovascular diseases    2005  Female           8972  
+1604   Cardiovascular diseases    2005  Female           4452  
+1664   Cardiovascular diseases    2005  Female            487  
+1724   Cardiovascular diseases    2005  Female           9513  
+1784   Cardiovascular diseases    2005  Female          11769  
+                       ...     ...     ...            ...  
+9224   Cardiovascular diseases    2005  Female          15112  
+9284   Cardiovascular diseases    2005  Female          32690  
+9344   Cardiovascular diseases    2005  Female            545  
+9404   Cardiovascular diseases    2005  Female          20257  
+9464   Cardiovascular diseases    2005  Female          12512  
+9524   Cardiovascular diseases    2005  Female          12176  
+9584   Cardiovascular diseases    2005  Female           6964  
+9644   Cardiovascular diseases    2005  Female          49973  
+9704   Cardiovascular diseases    2005  Female           5731  
+9764   Cardiovascular diseases    2005  Female            577  
+9824   Cardiovascular diseases    2005  Female           4347  
+9884   Cardiovascular diseases    2005  Female             63  
+9944   Cardiovascular diseases    2005  Female           1735  
+10004  Cardiovascular diseases    2005  Female          11053  
+10064  Cardiovascular diseases    2005  Female          58883  
+10124  Cardiovascular diseases    2005  Female           8167  
+10184  Cardiovascular diseases    2005  Female          11570  
+10244  Cardiovascular diseases    2005  Female         275191  
+10304  Cardiovascular diseases    2005  Female            664  
+10364  Cardiovascular diseases    2005  Female         110838  
+10424  Cardiovascular diseases    2005  Female          18513  
+10484  Cardiovascular diseases    2005  Female         443371  
+10544  Cardiovascular diseases    2005  Female           5654  
+10604  Cardiovascular diseases    2005  Female          42904  
+10664  Cardiovascular diseases    2005  Female            139  
+10724  Cardiovascular diseases    2005  Female          17171  
+10784  Cardiovascular diseases    2005  Female          63462  
+10844  Cardiovascular diseases    2005  Female          22106  
+10904  Cardiovascular diseases    2005  Female           6031  
+10964  Cardiovascular diseases    2005  Female           8529  
+
+[183 rows x 5 columns]
+                                                Location  \
+47                                           Afghanistan   
+107                                              Albania   
+167                                              Algeria   
+227                                               Angola   
+287                                  Antigua and Barbuda   
+347                                            Argentina   
+407                                              Armenia   
+467                                            Australia   
+527                                              Austria   
+587                                           Azerbaijan   
+647                                              Bahamas   
+707                                              Bahrain   
+767                                           Bangladesh   
+827                                             Barbados   
+887                                              Belarus   
+947                                              Belgium   
+1007                                              Belize   
+1067                                               Benin   
+1127                                              Bhutan   
+1187                    Bolivia (Plurinational State of)   
+1247                              Bosnia and Herzegovina   
+1307                                            Botswana   
+1367                                              Brazil   
+1427                                   Brunei Darussalam   
+1487                                            Bulgaria   
+1547                                        Burkina Faso   
+1607                                             Burundi   
+1667                                          Cabo Verde   
+1727                                            Cambodia   
+1787                                            Cameroon   
+                                                 ...   
+9227                                           Sri Lanka   
+9287                                  Sudan (until 2011)   
+9347                                            Suriname   
+9407                                              Sweden   
+9467                                         Switzerland   
+9527                                Syrian Arab Republic   
+9587                                          Tajikistan   
+9647                                            Thailand   
+9707           The former Yugoslav Republic of Macedonia   
+9767                                         Timor-Leste   
+9827                                                Togo   
+9887                                               Tonga   
+9947                                 Trinidad and Tobago   
+10007                                            Tunisia   
+10067                                             Turkey   
+10127                                       Turkmenistan   
+10187                                             Uganda   
+10247                                            Ukraine   
+10307                               United Arab Emirates   
+10367  United Kingdom of Great Britain and Northern I...   
+10427                        United Republic of Tanzania   
+10487                           United States of America   
+10547                                            Uruguay   
+10607                                         Uzbekistan   
+10667                                            Vanuatu   
+10727                 Venezuela (Bolivarian Republic of)   
+10787                                           Viet Nam   
+10847                                              Yemen   
+10907                                             Zambia   
+10967                                           Zimbabwe   
+
+                                        Dim2  Period    Dim1  First Tooltip  
+47     Chronic obstructive pulmonary disease    2005  Female           2362  
+107    Chronic obstructive pulmonary disease    2005  Female            314  
+167    Chronic obstructive pulmonary disease    2005  Female           2095  
+227    Chronic obstructive pulmonary disease    2005  Female           2051  
+287    Chronic obstructive pulmonary disease    2005  Female              9  
+347    Chronic obstructive pulmonary disease    2005  Female          16796  
+407    Chronic obstructive pulmonary disease    2005  Female            465  
+467    Chronic obstructive pulmonary disease    2005  Female           4168  
+527    Chronic obstructive pulmonary disease    2005  Female           1881  
+587    Chronic obstructive pulmonary disease    2005  Female            908  
+647    Chronic obstructive pulmonary disease    2005  Female             13  
+707    Chronic obstructive pulmonary disease    2005  Female             44  
+767    Chronic obstructive pulmonary disease    2005  Female          27854  
+827    Chronic obstructive pulmonary disease    2005  Female             61  
+887    Chronic obstructive pulmonary disease    2005  Female           1462  
+947    Chronic obstructive pulmonary disease    2005  Female           3971  
+1007   Chronic obstructive pulmonary disease    2005  Female             15  
+1067   Chronic obstructive pulmonary disease    2005  Female            919  
+1127   Chronic obstructive pulmonary disease    2005  Female            182  
+1187   Chronic obstructive pulmonary disease    2005  Female           1439  
+1247   Chronic obstructive pulmonary disease    2005  Female            584  
+1307   Chronic obstructive pulmonary disease    2005  Female            199  
+1367   Chronic obstructive pulmonary disease    2005  Female          34508  
+1427   Chronic obstructive pulmonary disease    2005  Female             29  
+1487   Chronic obstructive pulmonary disease    2005  Female           1562  
+1547   Chronic obstructive pulmonary disease    2005  Female           1056  
+1607   Chronic obstructive pulmonary disease    2005  Female            732  
+1667   Chronic obstructive pulmonary disease    2005  Female             53  
+1727   Chronic obstructive pulmonary disease    2005  Female           1209  
+1787   Chronic obstructive pulmonary disease    2005  Female           1951  
+                                     ...     ...     ...            ...  
+9227   Chronic obstructive pulmonary disease    2005  Female           4013  
+9287   Chronic obstructive pulmonary disease    2005  Female           3434  
+9347   Chronic obstructive pulmonary disease    2005  Female             35  
+9407   Chronic obstructive pulmonary disease    2005  Female           2273  
+9467   Chronic obstructive pulmonary disease    2005  Female           1452  
+9527   Chronic obstructive pulmonary disease    2005  Female            828  
+9587   Chronic obstructive pulmonary disease    2005  Female            642  
+9647   Chronic obstructive pulmonary disease    2005  Female           9012  
+9707   Chronic obstructive pulmonary disease    2005  Female            333  
+9767   Chronic obstructive pulmonary disease    2005  Female            111  
+9827   Chronic obstructive pulmonary disease    2005  Female            659  
+9887   Chronic obstructive pulmonary disease    2005  Female             12  
+9947   Chronic obstructive pulmonary disease    2005  Female            117  
+10007  Chronic obstructive pulmonary disease    2005  Female           1041  
+10067  Chronic obstructive pulmonary disease    2005  Female           8264  
+10127  Chronic obstructive pulmonary disease    2005  Female            271  
+10187  Chronic obstructive pulmonary disease    2005  Female           2005  
+10247  Chronic obstructive pulmonary disease    2005  Female           6986  
+10307  Chronic obstructive pulmonary disease    2005  Female             60  
+10367  Chronic obstructive pulmonary disease    2005  Female          24290  
+10427  Chronic obstructive pulmonary disease    2005  Female           2512  
+10487  Chronic obstructive pulmonary disease    2005  Female         102177  
+10547  Chronic obstructive pulmonary disease    2005  Female           1000  
+10607  Chronic obstructive pulmonary disease    2005  Female           2021  
+10667  Chronic obstructive pulmonary disease    2005  Female             21  
+10727  Chronic obstructive pulmonary disease    2005  Female           2442  
+10787  Chronic obstructive pulmonary disease    2005  Female          10029  
+10847  Chronic obstructive pulmonary disease    2005  Female           2322  
+10907  Chronic obstructive pulmonary disease    2005  Female            851  
+10967  Chronic obstructive pulmonary disease    2005  Female           1495  
+
+[183 rows x 5 columns]
+                                                Location               Dim2  \
+41                                           Afghanistan  Diabetes mellitus   
+101                                              Albania  Diabetes mellitus   
+161                                              Algeria  Diabetes mellitus   
+221                                               Angola  Diabetes mellitus   
+281                                  Antigua and Barbuda  Diabetes mellitus   
+341                                            Argentina  Diabetes mellitus   
+401                                              Armenia  Diabetes mellitus   
+461                                            Australia  Diabetes mellitus   
+521                                              Austria  Diabetes mellitus   
+581                                           Azerbaijan  Diabetes mellitus   
+641                                              Bahamas  Diabetes mellitus   
+701                                              Bahrain  Diabetes mellitus   
+761                                           Bangladesh  Diabetes mellitus   
+821                                             Barbados  Diabetes mellitus   
+881                                              Belarus  Diabetes mellitus   
+941                                              Belgium  Diabetes mellitus   
+1001                                              Belize  Diabetes mellitus   
+1061                                               Benin  Diabetes mellitus   
+1121                                              Bhutan  Diabetes mellitus   
+1181                    Bolivia (Plurinational State of)  Diabetes mellitus   
+1241                              Bosnia and Herzegovina  Diabetes mellitus   
+1301                                            Botswana  Diabetes mellitus   
+1361                                              Brazil  Diabetes mellitus   
+1421                                   Brunei Darussalam  Diabetes mellitus   
+1481                                            Bulgaria  Diabetes mellitus   
+1541                                        Burkina Faso  Diabetes mellitus   
+1601                                             Burundi  Diabetes mellitus   
+1661                                          Cabo Verde  Diabetes mellitus   
+1721                                            Cambodia  Diabetes mellitus   
+1781                                            Cameroon  Diabetes mellitus   
+                                                 ...                ...   
+9221                                           Sri Lanka  Diabetes mellitus   
+9281                                  Sudan (until 2011)  Diabetes mellitus   
+9341                                            Suriname  Diabetes mellitus   
+9401                                              Sweden  Diabetes mellitus   
+9461                                         Switzerland  Diabetes mellitus   
+9521                                Syrian Arab Republic  Diabetes mellitus   
+9581                                          Tajikistan  Diabetes mellitus   
+9641                                            Thailand  Diabetes mellitus   
+9701           The former Yugoslav Republic of Macedonia  Diabetes mellitus   
+9761                                         Timor-Leste  Diabetes mellitus   
+9821                                                Togo  Diabetes mellitus   
+9881                                               Tonga  Diabetes mellitus   
+9941                                 Trinidad and Tobago  Diabetes mellitus   
+10001                                            Tunisia  Diabetes mellitus   
+10061                                             Turkey  Diabetes mellitus   
+10121                                       Turkmenistan  Diabetes mellitus   
+10181                                             Uganda  Diabetes mellitus   
+10241                                            Ukraine  Diabetes mellitus   
+10301                               United Arab Emirates  Diabetes mellitus   
+10361  United Kingdom of Great Britain and Northern I...  Diabetes mellitus   
+10421                        United Republic of Tanzania  Diabetes mellitus   
+10481                           United States of America  Diabetes mellitus   
+10541                                            Uruguay  Diabetes mellitus   
+10601                                         Uzbekistan  Diabetes mellitus   
+10661                                            Vanuatu  Diabetes mellitus   
+10721                 Venezuela (Bolivarian Republic of)  Diabetes mellitus   
+10781                                           Viet Nam  Diabetes mellitus   
+10841                                              Yemen  Diabetes mellitus   
+10901                                             Zambia  Diabetes mellitus   
+10961                                           Zimbabwe  Diabetes mellitus   
+
+       Period    Dim1  First Tooltip  
+41       2005  Female           2560  
+101      2005  Female             82  
+161      2005  Female           2716  
+221      2005  Female            728  
+281      2005  Female             43  
+341      2005  Female           4907  
+401      2005  Female            793  
+461      2005  Female           1736  
+521      2005  Female           2173  
+581      2005  Female            803  
+641      2005  Female             60  
+701      2005  Female            127  
+761      2005  Female          10099  
+821      2005  Female            176  
+881      2005  Female            414  
+941      2005  Female           1038  
+1001     2005  Female             64  
+1061     2005  Female            566  
+1121     2005  Female             60  
+1181     2005  Female           1344  
+1241     2005  Female           1234  
+1301     2005  Female            387  
+1361     2005  Female          27335  
+1421     2005  Female             48  
+1481     2005  Female           1094  
+1541     2005  Female            757  
+1601     2005  Female            344  
+1661     2005  Female             67  
+1721     2005  Female            890  
+1781     2005  Female           1724  
+      ...     ...            ...  
+9221     2005  Female           3424  
+9281     2005  Female           2253  
+9341     2005  Female             96  
+9401     2005  Female           1062  
+9461     2005  Female            847  
+9521     2005  Female            424  
+9581     2005  Female            265  
+9641     2005  Female          14316  
+9701     2005  Female            419  
+9761     2005  Female             46  
+9821     2005  Female            383  
+9881     2005  Female             42  
+9941     2005  Female            834  
+10001    2005  Female           1201  
+10061    2005  Female           9764  
+10121    2005  Female            266  
+10181    2005  Female           1312  
+10241    2005  Female           2138  
+10301    2005  Female            103  
+10361    2005  Female           3641  
+10421    2005  Female           1926  
+10481    2005  Female          39047  
+10541    2005  Female            376  
+10601    2005  Female           1987  
+10661    2005  Female             23  
+10721    2005  Female           4241  
+10781    2005  Female           9125  
+10841    2005  Female           1379  
+10901    2005  Female            520  
+10961    2005  Female           1646  
+
+[183 rows x 5 columns]
+                                                Location                 Dim2  \
+38                                           Afghanistan  Malignant neoplasms   
+98                                               Albania  Malignant neoplasms   
+158                                              Algeria  Malignant neoplasms   
+218                                               Angola  Malignant neoplasms   
+278                                  Antigua and Barbuda  Malignant neoplasms   
+338                                            Argentina  Malignant neoplasms   
+398                                              Armenia  Malignant neoplasms   
+458                                            Australia  Malignant neoplasms   
+518                                              Austria  Malignant neoplasms   
+578                                           Azerbaijan  Malignant neoplasms   
+638                                              Bahamas  Malignant neoplasms   
+698                                              Bahrain  Malignant neoplasms   
+758                                           Bangladesh  Malignant neoplasms   
+818                                             Barbados  Malignant neoplasms   
+878                                              Belarus  Malignant neoplasms   
+938                                              Belgium  Malignant neoplasms   
+998                                               Belize  Malignant neoplasms   
+1058                                               Benin  Malignant neoplasms   
+1118                                              Bhutan  Malignant neoplasms   
+1178                    Bolivia (Plurinational State of)  Malignant neoplasms   
+1238                              Bosnia and Herzegovina  Malignant neoplasms   
+1298                                            Botswana  Malignant neoplasms   
+1358                                              Brazil  Malignant neoplasms   
+1418                                   Brunei Darussalam  Malignant neoplasms   
+1478                                            Bulgaria  Malignant neoplasms   
+1538                                        Burkina Faso  Malignant neoplasms   
+1598                                             Burundi  Malignant neoplasms   
+1658                                          Cabo Verde  Malignant neoplasms   
+1718                                            Cambodia  Malignant neoplasms   
+1778                                            Cameroon  Malignant neoplasms   
+                                                 ...                  ...   
+9218                                           Sri Lanka  Malignant neoplasms   
+9278                                  Sudan (until 2011)  Malignant neoplasms   
+9338                                            Suriname  Malignant neoplasms   
+9398                                              Sweden  Malignant neoplasms   
+9458                                         Switzerland  Malignant neoplasms   
+9518                                Syrian Arab Republic  Malignant neoplasms   
+9578                                          Tajikistan  Malignant neoplasms   
+9638                                            Thailand  Malignant neoplasms   
+9698           The former Yugoslav Republic of Macedonia  Malignant neoplasms   
+9758                                         Timor-Leste  Malignant neoplasms   
+9818                                                Togo  Malignant neoplasms   
+9878                                               Tonga  Malignant neoplasms   
+9938                                 Trinidad and Tobago  Malignant neoplasms   
+9998                                             Tunisia  Malignant neoplasms   
+10058                                             Turkey  Malignant neoplasms   
+10118                                       Turkmenistan  Malignant neoplasms   
+10178                                             Uganda  Malignant neoplasms   
+10238                                            Ukraine  Malignant neoplasms   
+10298                               United Arab Emirates  Malignant neoplasms   
+10358  United Kingdom of Great Britain and Northern I...  Malignant neoplasms   
+10418                        United Republic of Tanzania  Malignant neoplasms   
+10478                           United States of America  Malignant neoplasms   
+10538                                            Uruguay  Malignant neoplasms   
+10598                                         Uzbekistan  Malignant neoplasms   
+10658                                            Vanuatu  Malignant neoplasms   
+10718                 Venezuela (Bolivarian Republic of)  Malignant neoplasms   
+10778                                           Viet Nam  Malignant neoplasms   
+10838                                              Yemen  Malignant neoplasms   
+10898                                             Zambia  Malignant neoplasms   
+10958                                           Zimbabwe  Malignant neoplasms   
+
+       Period    Dim1  First Tooltip  
+38       2005  Female           6899  
+98       2005  Female           1962  
+158      2005  Female           8776  
+218      2005  Female           3483  
+278      2005  Female             46  
+338      2005  Female          28519  
+398      2005  Female           3201  
+458      2005  Female          16987  
+518      2005  Female           9196  
+578      2005  Female           3496  
+638      2005  Female            152  
+698      2005  Female            129  
+758      2005  Female          39246  
+818      2005  Female            294  
+878      2005  Female           9032  
+938      2005  Female          11437  
+998      2005  Female             80  
+1058     2005  Female           1497  
+1118     2005  Female            160  
+1178     2005  Female           3258  
+1238     2005  Female           2490  
+1298     2005  Female            435  
+1358     2005  Female          80640  
+1418     2005  Female            109  
+1478     2005  Female           7634  
+1538     2005  Female           3103  
+1598     2005  Female           2656  
+1658     2005  Female            135  
+1718     2005  Female           4847  
+1778     2005  Female           4626  
+      ...     ...            ...  
+9218     2005  Female           8271  
+9278     2005  Female           6251  
+9338     2005  Female            234  
+9398     2005  Female          10686  
+9458     2005  Female           7079  
+9518     2005  Female           5078  
+9578     2005  Female           1843  
+9638     2005  Female          34810  
+9698     2005  Female           1339  
+9758     2005  Female            280  
+9818     2005  Female           1271  
+9878     2005  Female             49  
+9938     2005  Female            711  
+9998     2005  Female           2480  
+10058    2005  Female          32187  
+10118    2005  Female           1746  
+10178    2005  Female          12820  
+10238    2005  Female          49828  
+10298    2005  Female            289  
+10358    2005  Female          75170  
+10418    2005  Female           9969  
+10478    2005  Female         271969  
+10538    2005  Female           3475  
+10598    2005  Female           5452  
+10658    2005  Female             60  
+10718    2005  Female          10332  
+10778    2005  Female          35811  
+10838    2005  Female           3676  
+10898    2005  Female           3816  
+10958    2005  Female           4020  
+
+[183 rows x 5 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
